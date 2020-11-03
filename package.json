@@ -1,0 +1,23 @@
+{
+  "name": "so-knowladge",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "authors": {
+    "name": "liuzhaoxu",
+    "email": ""
+  },
+  "repository": "/so-knowladge",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  },
+  "dependencies": {
+    "@vuepress/theme-blog": "^2.3.3",
+    "vuepress-theme-reco": "^1.5.7"
+  }
+}
