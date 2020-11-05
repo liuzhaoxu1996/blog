@@ -2,7 +2,7 @@
 
 插件用于 bundle 文件的优化，资源管理和环境变量注入，作用于整个构建过程。
 
-## 常见的 plugins
+## 常用 plugins
 
 -   CommonsChunkPlugin: 将 chunks 相同的模块代码提取成公共 js
 -   CleanWebpackPlugin: 清理构建目录
@@ -12,7 +12,7 @@
 -   UglifyjsWebpackPlugin: 压缩 js
 -   ZipWebpackPlugin: 将打包出的资源生成一个 zip 包
 
-## Loaders 的用法
+## 用法
 
 -   plugins: `[plugin-1, plugin-2]`
 
