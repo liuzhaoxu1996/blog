@@ -38,11 +38,12 @@ module.exports = {
     sidebar: {
       '/webpack/': [
         {
-          title: 'webpack',
+          title: 'webpack 5.x',
           collapsable: false,
           children: [
             '',
-            'webpack5.x',
+            'loaders',
+            'plugins'
           ]
         }
       ],
