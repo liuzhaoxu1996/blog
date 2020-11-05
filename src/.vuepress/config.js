@@ -43,7 +43,8 @@ module.exports = {
           children: [
             '',
             'loaders',
-            'plugins'
+            'plugins',
+            'mode'
           ]
         }
       ],
