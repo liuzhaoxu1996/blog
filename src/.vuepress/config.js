@@ -44,7 +44,9 @@ module.exports = {
             'loaders',
             'plugins',
             'mode',
-            'watch'
+            'watch',
+            'clean',
+            'splitChunk'
           ]
         }
       ],
