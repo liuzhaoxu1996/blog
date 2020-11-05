@@ -43,7 +43,8 @@ module.exports = {
             '',
             'loaders',
             'plugins',
-            'mode'
+            'mode',
+            'watch'
           ]
         }
       ],

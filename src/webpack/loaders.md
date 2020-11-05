@@ -12,12 +12,22 @@ webpack 内置支持 js 和 json 两种文件类型，通过 loaders 去支持�
 -   raw-loader: 将文件以字符串的形式导入
 -   thread-loader: 多进程打包 JS 和 CSS
 
-## 用法
+## 解析 js
 
--   test: 指定匹配规则
--   use: 指定使用的 loader 名称
+-   安装
+
+```sh
+yarn add @babel/core @babel/preset-env babel-loader -D
+```
+
+-   配置
+
+    -   test: 指定匹配规则
+    -   use: 指定使用的 loader 名称
 
 ```js
+//webpack.config.js
+
 const path = require(path);
 module.exports = {
     output: {
@@ -26,8 +36,123 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.txt$/,
-                use: "raw-loader",
+                test: /\.js$/,
+                use: "babel-loader",
+            },
+        ],
+    },
+};
+```
+
+```json
+// .babelrc
+
+{
+    "presets": ["@babel/preset-env"]
+}
+```
+
+## 解析 css
+
+-   安装
+
+```sh
+yarn add style-loader css-loader -D
+```
+
+-   配置
+
+    -   css-loader 用于加载.css 文件，并且转换成 commonjs 对象
+
+    -   style-loader 将样式通过`<style>`标签插入到 head 中
+
+```js
+module.exports = {
+    output: {
+        filename: "bundle.js",
+    },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: ["style-loader", "css-loader"],
+            },
+        ],
+    },
+};
+```
+
+## 解析 less
+
+-   安装
+
+```sh
+yarn add less less-loader -D
+```
+
+-   配置
+
+    -   less-loader 将 less 语法转换为 css 语法
+
+```js
+module.exports = {
+    output: {
+        filename: "bundle.js",
+    },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: ["style-loader", "css-loader", "less-loader"],
+            },
+        ],
+    },
+};
+```
+
+## 解析 图片、字体
+
+-   安装
+
+```sh
+yarn add file-loader -D
+
+// 资源转换成 base64
+yarn add url-loader -D
+```
+
+-   配置
+
+```js
+module.exports = {
+    output: {
+        filename: "bundle.js",
+    },
+    module: {
+        rules: [
+            {
+                test: /\.(png|jpg|gif|jpeg)$/,
+                use: ["file-loader"],
+                // 使用 base64
+
+                // use: [{
+                //     loader: 'url-loader',
+                //     options: {
+                //         limit: 10240
+                //     }
+                // }]
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                use: ["file-loader"],
+                // 使用 base64
+
+                // use: [{
+                //     loader: 'url-loader',
+                //     options: {
+                //         limit: 10240
+                //     }
+                // }]
             },
         ],
     },
