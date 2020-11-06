@@ -46,7 +46,11 @@ module.exports = {
             'mode',
             'watch',
             'clean',
-            'splitChunk'
+            'splitChunk',
+            'treeShaking',
+            'commonConfig',
+            'dynamicImport',
+            'webpackLibrary',
           ]
         }
       ],
