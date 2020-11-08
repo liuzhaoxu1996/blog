@@ -12,6 +12,7 @@
 -   UglifyjsWebpackPlugin: 压缩 js
 -   ZipWebpackPlugin: 将打包出的资源生成一个 zip 包
 -   SplitChunksPlugin: 提取公共资源
+-   HardSourceWebpackPlugin: 缓存加速二次构建速度
 
 ## [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin)
 
@@ -144,7 +145,7 @@ module.exports = {
 };
 ```
 
-## SplitChunksPlugin
+## [split-chunks-plugin](https://github.com/webpack/webpack.js.org/blob/master/src/content/plugins/split-chunks-plugin.md)
 
 SplitChunksPlugin 在 webpack4 以后是内置的，替代 CommonsChunkPlugin 插件
 
@@ -169,5 +170,19 @@ module.exports = {
             },
         },
     },
+};
+```
+
+## [hard-source-webpack-plugin](https://github.com/mzgoddard/hard-source-webpack-plugin#readme)
+
+HardSourceWebpackPlugin 是 webpack 的插件，为模块提供中间缓存步骤。为了查看结果，您需要使用此插件运行 webpack 两次：第一次构建将花费正常的时间, 第二次构建将显着加快（大概提升 90%的构建速度）
+
+-   代码示例
+
+```js
+const HardSourceWebpackPlugin = require("hard-source-webpack-plugin");
+
+module.exports = {
+    plugins: [new HardSourceWebpackPlugin()],
 };
 ```
