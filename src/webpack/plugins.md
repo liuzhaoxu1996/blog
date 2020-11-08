@@ -35,7 +35,11 @@ module.exports = {
         path: __dirname + "/dist",
         filename: "index_bundle.js",
     },
-    plugins: [new HtmlWebpackPlugin()],
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: "./src/index.html",
+        }),
+    ],
 };
 ```
 
