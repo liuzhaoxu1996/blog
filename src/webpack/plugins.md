@@ -11,6 +11,7 @@
 -   CopyWebpackPlugin: 将文件或者文件拷贝到构建的输出目录
 -   UglifyjsWebpackPlugin: 压缩 js
 -   ZipWebpackPlugin: 将打包出的资源生成一个 zip 包
+-   SplitChunksPlugin: 提取公共资源
 
 ## [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin)
 
@@ -72,29 +73,6 @@ module.exports = {
 };
 ```
 
-## [terser-webpack-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin)
-
-取代 style-loader，提取 js 中的 css 成单独文件
-
--   安装
-
-```sh
-yarn add terser-webpack-plugin -D
-```
-
--   使用
-
-```js
-const TerserPlugin = require("terser-webpack-plugin");
-
-module.exports = {
-    optimization: {
-        minimize: true,
-        minimizer: [new TerserPlugin()],
-    },
-};
-```
-
 ## [css-minimizer-webpack-plugin](https://github.com/webpack-contrib/css-minimizer-webpack-plugin)
 
 压缩 css
@@ -121,7 +99,7 @@ module.exports = {
 };
 ```
 
-### [clean-webpack-plugin](https://github.com/johnagan/clean-webpack-plugin)
+## [clean-webpack-plugin](https://github.com/johnagan/clean-webpack-plugin)
 
 默认会删除 output 指定的输出目录
 
@@ -138,5 +116,58 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
     plugins: [new CleanWebpackPlugin()],
+};
+```
+
+## [terser-webpack-plugin](https://webpack.docschina.org/plugins/terser-webpack-plugin/)
+
+多进程压缩，[terser-webpack-plugin](https://webpack.docschina.org/plugins/terser-webpack-plugin/) 开启 parallel
+
+-   安装
+
+```sh
+yarn add terser-webpack-plugin -D
+```
+
+-   代码示例
+
+```js
+module.exports = {
+    optimization: {
+        minimizer: [
+            new TerserPlugin({
+                // parallel: true // 默认值：2*cpu -1
+                parallel: 4,
+            }),
+        ],
+    },
+};
+```
+
+## SplitChunksPlugin
+
+SplitChunksPlugin 在 webpack4 以后是内置的，替代 CommonsChunkPlugin 插件
+
+-   chunks 参数说明：
+
+    -   async 异步引入的库进行分离
+    -   initial 同步引入的库进行分离
+    -   all 所有引入的库进行分离
+
+-   代码示例
+
+```js
+module.exports = {
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    test: /(react|react-dom)/,
+                    name: "vendors",
+                    chunks: "all",
+                },
+            },
+        },
+    },
 };
 ```

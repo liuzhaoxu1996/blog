@@ -206,28 +206,3 @@ module.exports = {
     },
 };
 ```
-
-## [terser-webpack-plugin](https://webpack.docschina.org/plugins/terser-webpack-plugin/)
-
-多进程压缩，[terser-webpack-plugin](https://webpack.docschina.org/plugins/terser-webpack-plugin/) 开启 parallel
-
-### 安装
-
-```sh
-yarn add terser-webpack-plugin -D
-```
-
-### 代码示例
-
-```js
-module.exports = {
-    optimization: {
-        minimizer: [
-            new TerserPlugin({
-                // parallel: true // 默认值：2*cpu -1
-                parallel: 4,
-            }),
-        ],
-    },
-};
-```

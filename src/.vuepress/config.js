@@ -45,7 +45,6 @@ module.exports = {
             'plugins',
             'mode',
             'watch',
-            'clean',
             'splitChunk',
             'treeShaking',
             'dynamicImport',
