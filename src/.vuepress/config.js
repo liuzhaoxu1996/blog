@@ -51,7 +51,6 @@ module.exports = {
             'dynamicImport',
             'webpackLibrary',
             'cache',
-            'parallel',
             'speed',
             'upgrade',
             'commonConfig',

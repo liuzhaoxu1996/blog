@@ -120,3 +120,23 @@ module.exports = {
     },
 };
 ```
+
+### [clean-webpack-plugin](https://github.com/johnagan/clean-webpack-plugin)
+
+默认会删除 output 指定的输出目录
+
+-   安装
+
+```sh
+yarn add clean-webpack-plugin -D
+```
+
+-   使用
+
+```js
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+
+module.exports = {
+    plugins: [new CleanWebpackPlugin()],
+};
+```
