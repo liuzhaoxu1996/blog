@@ -48,10 +48,13 @@ module.exports = {
             'clean',
             'splitChunk',
             'treeShaking',
-            'commonConfig',
             'dynamicImport',
             'webpackLibrary',
             'cache',
+            'parallel',
+            'speed',
+            'upgrade',
+            'commonConfig',
           ]
         }
       ],
