@@ -12,7 +12,9 @@ webpack 内置支持 js 和 json 两种文件类型，通过 loaders 去支持�
 -   raw-loader: 将文件以字符串的形式导入
 -   thread-loader: 多进程打包 JS 和 CSS
 
-## 解析 js
+## babel-loader
+
+解析 js
 
 -   安装
 
@@ -52,7 +54,9 @@ module.exports = {
 }
 ```
 
-## 解析 css
+## css-loader
+
+解析 css
 
 -   安装
 
@@ -82,7 +86,9 @@ module.exports = {
 };
 ```
 
-## 解析 less
+## less-loader
+
+解析 less
 
 -   安装
 
@@ -110,7 +116,9 @@ module.exports = {
 };
 ```
 
-## 解析 图片、字体
+## file-loader
+
+解析 图片、字体
 
 -   安装
 
