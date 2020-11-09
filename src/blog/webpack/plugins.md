@@ -186,3 +186,25 @@ module.exports = {
     plugins: [new HardSourceWebpackPlugin()],
 };
 ```
+
+## [friendly-errors-webpack-plugin](https://github.com/geowarin/friendly-errors-webpack-plugin)
+
+Friendly-errors-webpack-plugin 可以识别某些类的 webpack 错误，并清除，汇总并确定优先级，以提供更好的开发人员体验。
+
+-   安装
+
+```sh
+npm install friendly-errors-webpack-plugin --save-dev
+```
+
+-   代码示例
+
+```js
+const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
+
+module.exports = {
+    // ...
+    plugins: [new FriendlyErrorsWebpackPlugin()],
+    // ...
+};
+```
