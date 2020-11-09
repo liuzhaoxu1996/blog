@@ -4,7 +4,7 @@
 
 -   html 文件的压缩：html-webpack-plugin
 -   css 文件的压缩：mini-css-extract-plugin
--   js 文件的压缩：uglify-webpack-plugin
+-   js 文件的压缩：terser-webpack-plugin
 
 ## 2. 缩小构建目标
 
@@ -33,9 +33,9 @@ DCE: dead code elimination
 -   必须使用 es6 语法, 不支持 cjs
 -   必须在 production 模式下
 
-## 4. [Purgecss-webpack-plugin](https://github.com/FullHuman/purgecss/tree/master/packages/purgecss-webpack-plugin)
+## 4. 擦除无用 css
 
-擦除无用 css
+[Purgecss-webpack-plugin](https://github.com/FullHuman/purgecss/tree/master/packages/purgecss-webpack-plugin)
 
 -   安装
 
@@ -92,9 +92,7 @@ module.exports = {
 };
 ```
 
-## 5. [SplitChunksPlugin](https://github.com/webpack/webpack.js.org/blob/master/src/content/plugins/split-chunks-plugin.md)
-
-提取公共资源
+## 5. 提取公共资源
 
 ::: tip
 SplitChunksPlugin 在 webpack4 以后是内置的，替代 CommonsChunkPlugin 插件
@@ -214,4 +212,69 @@ function test() {
         // ...
     });
 }
+```
+
+## 8. 多进程压缩
+
+多进程压缩，[terser-webpack-plugin](https://webpack.docschina.org/plugins/terser-webpack-plugin/) 开启 parallel
+
+-   安装
+
+```sh
+yarn add terser-webpack-plugin -D
+```
+
+-   代码示例
+
+```js
+module.exports = {
+    optimization: {
+        minimizer: [
+            new TerserPlugin({
+                // parallel: true // 默认值：2*cpu -1
+                parallel: 4,
+            }),
+        ],
+    },
+};
+```
+
+## 9. 多进程构建
+
+多进程构建，每次 webpack 解析一个模块，[thread-loader](https://www.webpackjs.com/loaders/thread-loader/) 会将它及它的依赖分配给 worker 线程中
+
+### 安装
+
+```sh
+yarn add thread-loader -D
+```
+
+### 代码示例
+
+```js{13-18}
+module.exports = {
+    entry: entry,
+    output: {
+        path: path.join(__dirname, "dist"),
+        filename: "[name].bundle.js",
+    },
+    mode: "development",
+    module: {
+        rules: [
+            {
+                test: /.js$/,
+                use: [
+                    {
+                        loader: "thread-loader",
+                        options: {
+                            workers: 3,
+                        },
+                    },
+                    "babel-loader?cacheDirectory=true",
+                ],
+                exclude: "node_modules",
+            },
+        ],
+    },
+};
 ```
