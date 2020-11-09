@@ -34,29 +34,46 @@ module.exports = {
     lastUpdated: false,
     nav: [
     ],
+    sidebarDepth: 1,
     sidebar: {
-      '/webpack/': [
+      collapsable: false,
+      '/blog/': [
         {
           title: 'webpack 5.x',
-          collapsable: false,
+          // collapsable: false,
           children: [
-            '',
-            'loaders',
-            'plugins',
-            'mode',
-            'watch',
-            'splitChunk',
-            'treeShaking',
-            'dynamicImport',
-            'webpackLibrary',
-            'cache',
-            'speed',
-            'upgrade',
-            'commonConfig',
-            'delete',
+            '/blog/webpack/loaders',
+            '/blog/webpack/plugins',
+            '/blog/webpack/mode',
+            '/blog/webpack/watch',
+            '/blog/webpack/splitChunk',
+            '/blog/webpack/treeShaking',
+            '/blog/webpack/dynamicImport',
+            '/blog/webpack/webpackLibrary',
+            '/blog/webpack/cache',
+            '/blog/webpack/speed',
+            '/blog/webpack/upgrade',
+            '/blog/webpack/commonConfig',
+            '/blog/webpack/delete',
+          ]
+        },
+        {
+          title: 'http3',
+          // collapsable: false,
+          children: [
+            '/blog/http/introduction',
           ]
         }
       ],
+      '/http/': [
+        {
+          title: 'http3',
+          collapsable: false,
+          children: [
+            ''
+          ]
+        }
+      ]
     }
   },
 
