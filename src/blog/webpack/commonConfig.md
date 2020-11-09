@@ -43,6 +43,6 @@
 
 -   构建包功能设计
 
-![an image](../images/1.png)
+![an image](https://p3.ssl.qhimg.com/t0172a88768aa06f860.png)
 
 -   目录结构设计

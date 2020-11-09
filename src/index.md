@@ -5,5 +5,5 @@ tagline:
 actionText: 快速开始 →
 actionLink: /blog/webpack/
 
-footer: Copyright © 2020-present linus
+footer: Copyright © 2020-present lius
 ---
