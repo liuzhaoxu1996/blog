@@ -22,11 +22,11 @@ require(["test"], function(Test) {
 });
 ```
 
-## 配置
+## 1. 配置
 
--   library: 库的全局变量
--   libraryTarget: 支持库的引入方式
--   libraryExport: 导入形式
+    -   library: 库的全局变量
+    -   libraryTarget: 支持库的引入方式
+    -   libraryExport: 导入形式
 
 ```js
 module.exports = {
@@ -43,7 +43,7 @@ module.exports = {
 }
 ```
 
-## 针对.min 文件压缩
+## 2. 针对.min 文件压缩
 
 -   安装插件 `terser-webpack-plugin`
 
