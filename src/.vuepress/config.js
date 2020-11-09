@@ -4,11 +4,12 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'Liuzhaoxu\'s blog',
+  title: 'BLOG',
+
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
-  description: 'Lius的博客',
+  description: 'Liuzhaoxu\'s blog',
 
   /**
    * Extra tags to be injected to the page HTML `<head>`
