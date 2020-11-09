@@ -1,6 +1,6 @@
 # Mode
 
-## Mode: 指定当前的构建环境:
+## Mode: 指定当前的构建环境
 
 -   production
 -   development
