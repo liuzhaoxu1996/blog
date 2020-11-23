@@ -1,48 +1,48 @@
-# 通用配置
+# sobuild-cli
 
 构建通用 webpack 配置
 
-## 构建配置抽离成 npm 包的意义
+[sobuild-cli](https://github.com/liuzhaoxu1996/sobuild-cli) 旨在能够 **快速构建项目**, **规范目录结构**, **开发规范** 等。 接入者可快速开发业务, 无需考虑打包构建等头疼问题。
 
-**1. 通用性**
+## 如何接入？
 
--   业务开发无需关注构建配置
--   统一团队构建脚本
+-   **新项目接入**
 
-**2. 可维护性**
+```shell
 
--   构建配置合理拆分
--   README 文档，ChangeLog 文档等
+# npm install -g sobuild-cli 目前还没发布正式版
 
-**3. 质量**
+sobuild init <template-name> <project-name>
+```
 
--   冒烟测试、单元测试、测试覆盖率
--   持续集成
+Example:
 
-## 构建配置管理的方案
+```shell
+sobuild init webpack demo
+```
 
--   通过多个配置文件管理不同环境的构建
+上面的命令从 [sobuild-webpack-template](https://github.com/liuzhaoxu1996/sobuild-webpack-template) 中提取模板，提示您输入一些信息，并在 demo 处生成项目。
 
--   将构建配置设计成一个库
+-   **老项目接入**
 
--   抽成一个命令行工具进行管理
+老项目接入时, sobuild 会将用户重新配置的信息合并到 package.json 文件中
 
-## 构建配置包设计
+## 当前可用的模板
 
--   通过多个配置文件管理不同环境的构建
+-   [sobuild-webpack-template](https://github.com/liuzhaoxu1996/sobuild-webpack-template) : 通用 webpack 构建模板
 
-    -   基础配置：webpack.base.js
-    -   开发环境：webpack.dev.js
-    -   生产环境：webpack.prod.js
-    -   ssr 环境：webpack.ssr.js
+## 自定义模板
 
--   将构建配置设计成一个库
+当然, 你也可以使用自己构建的模板, 参照 sobuild-webpack-template 构建自己的通用配置即可
 
-    -   规范：Git commit 日志、README、ESLint 规范
-    -   质量：冒烟测试、单元测试、测试覆盖率和 CI
+sobuild 使用 `ejs`模板语法, 使用[metalsmith](https://github.com/segmentio/metalsmith)读取 meta.js 或者 meta.json 配置
 
--   构建包功能设计
+包含以下字段:
 
-![an image](https://p3.ssl.qhimg.com/t0172a88768aa06f860.png)
+-   `prompts`: 用于收集用户选项数据
 
--   目录结构设计
+-   `filter`: 用于有条件的过滤器文件进行渲染。
+
+-   `skipInterpolation`: 不执行 ejs 编译文件
+
+-   `complete`: 可以在生成模板后钩子。

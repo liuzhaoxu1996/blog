@@ -4,7 +4,7 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'Liu Zhaoxu\'s blog',
+  title: 'Liu zhaoxu\'s blog',
 
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
@@ -52,9 +52,9 @@ module.exports = {
             '/blog/webpack/speed',
             '/blog/webpack/webpackLibrary',
             '/blog/webpack/upgrade',
-            '/blog/webpack/commonConfig',
             '/blog/webpack/delete',
-            '/blog/webpack/federationPlugin',
+            '/blog/webpack/federation',
+            '/blog/webpack/commonConfig',
           ]
         },
         {
