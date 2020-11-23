@@ -4,7 +4,7 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'BLOG',
+  title: 'Liu Zhaoxu\'s blog',
 
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
@@ -54,6 +54,7 @@ module.exports = {
             '/blog/webpack/upgrade',
             '/blog/webpack/commonConfig',
             '/blog/webpack/delete',
+            '/blog/webpack/federationPlugin',
           ]
         },
         {
@@ -61,6 +62,15 @@ module.exports = {
           // collapsable: false,
           children: [
             '/blog/http/introduction',
+          ]
+        },
+        {
+          title: 'flutter',
+          children: [
+            '/blog/flutter/init',
+            '/blog/flutter/flutter',
+            '/blog/flutter/dart',
+            '/blog/flutter/example',
           ]
         }
       ],
