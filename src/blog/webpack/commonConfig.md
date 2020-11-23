@@ -4,6 +4,9 @@
 
 [sobuild-cli](https://github.com/liuzhaoxu1996/sobuild-cli) 旨在能够 **快速构建项目**, **规范目录结构**, **开发规范** 等。 接入者可快速开发业务, 无需考虑打包构建等头疼问题。
 
+
+![设计](https://p3.ssl.qhimg.com/t0132bd7c6d008a753f.png)
+
 ## 如何接入？
 
 -   **新项目接入**
@@ -31,9 +34,9 @@ sobuild init webpack demo
 
 -   [sobuild-webpack-template](https://github.com/liuzhaoxu1996/sobuild-webpack-template) : 通用 webpack 构建模板
 
-## 自定义模板
+## 可扩展
 
-当然, 你也可以使用自己构建的模板, 参照 sobuild-webpack-template 构建自己的通用配置即可
+你也可以使用自己构建的模板, 参照 sobuild-webpack-template 构建自己的通用配置即可
 
 sobuild 使用 `ejs`模板语法, 使用[metalsmith](https://github.com/segmentio/metalsmith)读取 meta.js 或者 meta.json 配置
 
