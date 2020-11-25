@@ -72,6 +72,12 @@ module.exports = {
             '/blog/flutter/dart',
             '/blog/flutter/example',
           ]
+        },
+        {
+          title: 'tensorflow',
+          children: [
+            '/blog/tensorflow/init',
+          ]
         }
       ],
       '/http/': [
