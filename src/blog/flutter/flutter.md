@@ -2,26 +2,26 @@
 
 ## StatelessWidget 基础组件
 
--   Container
--   Text
--   Icon
--   CloseButton
--   BackButton
--   Chip
--   Divider
--   Card
--   AlertDialog
+- Container
+- Text
+- Icon
+- CloseButton
+- BackButton
+- Chip
+- Divider
+- Card
+- AlertDialog
 
 ## StatefulWidget 基础组件
 
--   MaterialApp
--   Scaffold
--   AppBar
--   BottomNavigationBar
--   RefreshIndicator
--   Image
--   TextField
--   PageView
+- MaterialApp
+- Scaffold
+- AppBar
+- BottomNavigationBar
+- RefreshIndicator
+- Image
+- TextField
+- PageView
 
 ::: tip 对比
 
@@ -41,23 +41,23 @@
 
 1.  初始化时期
 
--   `createState`: Framework 调用会通过调用 createState 来创建一个 State。
+- `createState`: Framework 调用会通过调用 createState 来创建一个 State。
 
--   `initState`: 新创建的 State 会和一个 BuildContext 产生关联，此时认为 State 已经被安装好了，initState() 函数将会被调用。
+- `initState`: 新创建的 State 会和一个 BuildContext 产生关联，此时认为 State 已经被安装好了，initState() 函数将会被调用。
 
 2.  更新时期
 
-    -   `didChangeDependencies`:在 initState() 调用结束后，这个函数会被调用。事实上，当 State 对象的依赖关系发生变化时，这个函数总会被 Framework 调用。
+    - `didChangeDependencies`:在 initState() 调用结束后，这个函数会被调用。事实上，当 State 对象的依赖关系发生变化时，这个函数总会被 Framework 调用。
 
-    -   `build`: 经过以上步骤，系统认为一个 State 已经准备好了，就会调用 build() 来构建视图。我们需要在这个函数中，返回一个 Widget。
+    - `build`: 经过以上步骤，系统认为一个 State 已经准备好了，就会调用 build() 来构建视图。我们需要在这个函数中，返回一个 Widget。
 
-    -   `didUpdateWidget`:当 widget 的配置发生变化时，会调用这个函数。比如，Hot-reload 的时候就会调用这个函数。这个函数调用后，会调用 build()。
+    - `didUpdateWidget`:当 widget 的配置发生变化时，会调用这个函数。比如，Hot-reload 的时候就会调用这个函数。这个函数调用后，会调用 build()。
 
 3.  销毁时期
 
-    -   `deactivate`: 当 State 被暂时从视图树中移除时，会调用这个函数。页面切换时，也会调用它，因为此时 State 在视图树中的位置发生了变化，需要先暂时移除后添加。
+    - `deactivate`: 当 State 被暂时从视图树中移除时，会调用这个函数。页面切换时，也会调用它，因为此时 State 在视图树中的位置发生了变化，需要先暂时移除后添加。
 
-    -   `dispose`:当 State 被永久的从视图树中移除，Framework 会调用该函数。在销毁前触发，我们可以在这里进行最终的资源释放。在调用这个函数之前，总会先调用 deactivate()。
+    - `dispose`:当 State 被永久的从视图树中移除，Framework 会调用该函数。在销毁前触发，我们可以在这里进行最终的资源释放。在调用这个函数之前，总会先调用 deactivate()。
 
 ::: warning 注意
 重写的时候必须要调用 super.xxx()。
@@ -83,8 +83,8 @@ class _WidgetLifecyleState extends State<WidgetLifecyle> {
   // 通常会做一些初始化工作,比如channel的初始化,监听器的初始化等
   @override
   void initState() {
-    print('-----initState-----');
-    super.initState();
+	print('-----initState-----');
+	super.initState();
   }
 
   // 依赖变化时调用
@@ -93,8 +93,8 @@ class _WidgetLifecyleState extends State<WidgetLifecyle> {
   // InheritedWidget类似vuex, 高效的将数据在Widget树中向下传递和共享
   @override
   void didChangeDependencies() {
-    print('------didChangeDependencies-----');
-    super.didChangeDependencies();
+	print('------didChangeDependencies-----');
+	super.didChangeDependencies();
   }
 
   // 这个一个必须实现的方法,相当于mounted
@@ -102,46 +102,46 @@ class _WidgetLifecyleState extends State<WidgetLifecyle> {
   // 另外当调用setState后也会再次调用该方法
   @override
   Widget build(BuildContext context) {
-    print('-----build-----');
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Flutter页面生命周期'),
-        leading: BackButton(),
-      ),
-      body: Center(
-          child: Column(children: <Widget>[
-        RaisedButton(
-          onPressed: () {
-            setState(() {
-              _count += 1;
-            });
-          },
-          child: Text('点我'),
-        ),
-        Text(_count.toString())
-      ])),
-    );
+	print('-----build-----');
+	return Scaffold(
+	  appBar: AppBar(
+		title: Text('Flutter页面生命周期'),
+		leading: BackButton(),
+	  ),
+	  body: Center(
+		  child: Column(children: <Widget>[
+		RaisedButton(
+		  onPressed: () {
+			setState(() {
+			  _count += 1;
+			});
+		  },
+		  child: Text('点我'),
+		),
+		Text(_count.toString())
+	  ])),
+	);
   }
 
   @override
   void didUpdateWidget(covariant WidgetLifecyle oldWidget) {
-    print('------didUpdateWidget------');
-    super.didUpdateWidget(oldWidget);
+	print('------didUpdateWidget------');
+	super.didUpdateWidget(oldWidget);
   }
 
   // 很少使用,在组件被移除时调用
   @override
   void deactivate() {
-    print('-----deactivate-----');
-    super.deactivate();
+	print('-----deactivate-----');
+	super.deactivate();
   }
 
   // 组件被销毁时调用
   // 作用: 资源的释放, 监听器的卸载, channel的销毁等
   @override
   void dispose() {
-    print('------dispose------');
-    super.dispose();
+	print('------dispose------');
+	super.dispose();
   }
 }
 
@@ -151,9 +151,9 @@ class _WidgetLifecyleState extends State<WidgetLifecyle> {
 
 App 生命周期定义了 App 从启动到退出的全过程，其回调机制能够让我们可以根据 App 状态选择合适的时机做恰当的事情。
 
--   resumed：可见的，并能响应用户的输入。
--   inactive：处在不活动状态，无法处理用户响应。
--   paused：不可见并不能响应用户的输入，但是在后台继续活动中。
+- resumed：可见的，并能响应用户的输入。
+- inactive：处在不活动状态，无法处理用户响应。
+- paused：不可见并不能响应用户的输入，但是在后台继续活动中。
 
 **举例:**
 
@@ -170,51 +170,51 @@ class AppLiftcycle extends StatefulWidget {
 }
 
 class _AppLiftcycleState extends State<AppLiftcycle>
-    with WidgetsBindingObserver {
+	with WidgetsBindingObserver {
   @override
 
   // 初始化state
   void initState() {
-    WidgetsBinding.instance.addObserver(this);
-    super.initState();
+	WidgetsBinding.instance.addObserver(this);
+	super.initState();
   }
 
   // 构建视图
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('App生命周期'),
-        leading: GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: Icon(Icons.arrow_back),
-        ),
-      ),
-      body: Center(child: Text('App生命周期')),
-    );
+	return Scaffold(
+	  appBar: AppBar(
+		title: Text('App生命周期'),
+		leading: GestureDetector(
+		  onTap: () {
+			Navigator.pop(context);
+		  },
+		  child: Icon(Icons.arrow_back),
+		),
+	  ),
+	  body: Center(child: Text('App生命周期')),
+	);
   }
 
   // 当app生命周期发生变化时, 会回调这个方法
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    super.didChangeAppLifecycleState(state);
-    print('state = $state');
-    if (state == AppLifecycleState.paused) {
-      print('App进入后台');
-    } else if (state == AppLifecycleState.resumed) {
-      print('App进入前台');
-    } else if (state == AppLifecycleState.inactive) {
-      print('App处于非活动状态, 比如:来了个电话');
-    }
+	super.didChangeAppLifecycleState(state);
+	print('state = $state');
+	if (state == AppLifecycleState.paused) {
+	  print('App进入后台');
+	} else if (state == AppLifecycleState.resumed) {
+	  print('App进入前台');
+	} else if (state == AppLifecycleState.inactive) {
+	  print('App处于非活动状态, 比如:来了个电话');
+	}
   }
 
   // 销毁监听器
   @override
   void dispose() {
-    WidgetsBinding.instance.removeObserver(this);
-    super.dispose();
+	WidgetsBinding.instance.removeObserver(this);
+	super.dispose();
   }
 }
 ```
@@ -235,12 +235,12 @@ import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(Scaffold(
-    body: Center(
-      child: RaisedButton( // 按钮
-        onPressed: _launchURL, // onPressed事件
-        child: Text('打开浏览器'), // 按钮文案
-      ),
-    ),
+	body: Center(
+	  child: RaisedButton( // 按钮
+		onPressed: _launchURL, // onPressed事件
+		child: Text('打开浏览器'), // 按钮文案
+	  ),
+	),
   ));
 }
 
@@ -248,9 +248,9 @@ void main() {
 _launchURL() async {
   const url = 'https://flutter.dev';
   if (await canLaunch(url)) {
-    await launch(url);
+	await launch(url);
   } else {
-    throw 'Could not launch $url';
+	throw 'Could not launch $url';
   }
 }
 
@@ -266,27 +266,27 @@ import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(Scaffold(
-    body: Center(
-      child: RaisedButton( // 按钮
-        onPressed: _openMap, // onPressed事件
-        child: Text('打开地图'), // 文案
-      ),
-    ),
+	body: Center(
+	  child: RaisedButton( // 按钮
+		onPressed: _openMap, // onPressed事件
+		child: Text('打开地图'), // 文案
+	  ),
+	),
   ));
 }
 _openMap() {
-    const url='geo:52.32.4.917'; // App提供者提供的schema
-    if (await canLaunch(url)) {
-        await launch(url);
-    } else {
-        // ios
-        const url = 'http://maps.apple.com/?ll=52.32.4.917';
-        if (await canLaunch(url)) {
-            await launch(url);
-        } else {
-            throw 'cant\'t launch $url';
-        }
-    }
+	const url='geo:52.32.4.917'; // App提供者提供的schema
+	if (await canLaunch(url)) {
+		await launch(url);
+	} else {
+		// ios
+		const url = 'http://maps.apple.com/?ll=52.32.4.917';
+		if (await canLaunch(url)) {
+			await launch(url);
+		} else {
+			throw 'cant\'t launch $url';
+		}
+	}
 }
 ```
 
@@ -294,9 +294,9 @@ _openMap() {
 
 步骤:
 
--   继承`StatelessWidget`或者`StatefullWidget`
--   声明构造函数与入参
--   重写 `build` 方法
+- 继承`StatelessWidget`或者`StatefullWidget`
+- 声明构造函数与入参
+- 重写 `build` 方法
 
 ::: tip 1. 为什么要用 final 修饰 Widget 的成员变量?
 
