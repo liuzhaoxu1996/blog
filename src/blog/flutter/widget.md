@@ -1,6 +1,6 @@
 # 开发
 
-## StatelessWidget 基础组件
+## StatelessWidget
 
 - Container
 - Text
@@ -12,12 +12,12 @@
 - Card
 - AlertDialog
 
-## StatefulWidget 基础组件
+## StatefulWidget
 
-- MaterialApp
-- Scaffold
+- MaterialApp: 根节点
+- Scaffold: flutter 帮我们封装的带有 appbar, 导航栏, 侧边栏的组件
 - AppBar
-- BottomNavigationBar
+- BottomNavigationBar: 底部导航栏
 - RefreshIndicator
 - Image
 - TextField

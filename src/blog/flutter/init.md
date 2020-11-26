@@ -1,4 +1,4 @@
-# 部署
+# 如何快速搭建 flutter 项目
 
 ## 1. 设置 FLutter 镜像(非必须)
 
@@ -92,11 +92,5 @@ $ flutter create 项目名称
 ```sh
 $ cd 项目
 
-$ flutter run
+$ flutter run ( -d '设备id' )
 ```
-
-## 5. 使用 flutter 插件
-
--   [插件官网](https://pub.dev/)
-
--   [常用插件](https://juejin.im/post/6844904014853701645)
