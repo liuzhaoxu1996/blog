@@ -69,10 +69,15 @@ module.exports = {
                     children: [
                         '/blog/flutter/init',
                         '/blog/flutter/package',
+                        '/blog/flutter/layout',
+                        '/blog/flutter/route',
+                        '/blog/flutter/app',
+                        '/blog/flutter/lifecycle',
                         '/blog/flutter/widget',
                         '/blog/flutter/dart',
+                        '/blog/flutter/usage',
+                        '/blog/flutter/components',
                         '/blog/flutter/example',
-                        '/blog/flutter/tips',
                     ]
                 },
                 {
