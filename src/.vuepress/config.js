@@ -41,7 +41,7 @@ module.exports = {
             '/blog/': [
                 {
                     title: 'webpack 5.x',
-                    // collapsable: false,
+                    collapsable: false,
                     children: [
                         '/blog/webpack/introduction',
                         '/blog/webpack/loaders',
@@ -58,14 +58,8 @@ module.exports = {
                     ]
                 },
                 {
-                    title: 'http3',
-                    // collapsable: false,
-                    children: [
-                        '/blog/http/introduction',
-                    ]
-                },
-                {
                     title: 'flutter',
+                    collapsable: false,
                     children: [
                         '/blog/flutter/init',
                         '/blog/flutter/package',
@@ -81,21 +75,27 @@ module.exports = {
                     ]
                 },
                 {
-                    title: 'tensorflow',
+                    title: 'spider',
+                    collapsable: false,
                     children: [
-                        '/blog/tensorflow/init',
+                        '/blog/spider/init',
                     ]
-                }
-            ],
-            '/http/': [
+                },
                 {
                     title: 'http3',
                     collapsable: false,
                     children: [
-                        ''
+                        '/blog/http/introduction',
                     ]
-                }
-            ]
+                },
+                {
+                    title: 'tensorflow',
+                    collapsable: false,
+                    children: [
+                        '/blog/tensorflow/init',
+                    ]
+                },
+            ],
         }
     },
 
