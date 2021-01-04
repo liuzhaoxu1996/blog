@@ -27,8 +27,26 @@ Row(
 
 ## 圆角
 
+(1) 利用card
+
 ```dart
-borderRadius: BorderRadius.all(Radius.circular(10))
+Card(   
+  shape: RoundedRectangleBorder(
+  borderRadius: BorderRadius.circular(12), // 圆形: 宽度的一半
+  ),
+  clipBehavior: Clip.antiAlias, // 裁切方式: 抗锯齿
+  elevation: 0, // 阴影
+  child: Image.network(...)
+)
+```
+
+(2) 利用clipRRect
+
+```dart
+ClipRRect(
+  borderRadius: BorderRadius.circular(12),
+  child: Image.network(…)
+)
 ```
 
 ## Image
@@ -61,4 +79,23 @@ NotificationListener(
         }
     }
 )
+```
+
+## 文字溢出(...)
+
+```dart
+// limitedBox用于指定最大宽高
+limitedBox(
+    maxWidth: 130,
+    child: Text(
+        _poiName(),
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
+        style: TextStyle(color: Colors.white, fontSize: 12)
+    )
+)
+
+String _poiName() {
+    return item.article.pios == null || item.article.pois.length == 0 ? '未知' : item.article.pois[0]?.poiName ?? '未知';
+}
 ```
