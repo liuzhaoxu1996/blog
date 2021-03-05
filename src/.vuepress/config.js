@@ -1,5 +1,3 @@
-const { description } = require('../../package')
-
 module.exports = {
     /**
      * Ref：https://v1.vuepress.vuejs.org/config/#title
@@ -17,9 +15,18 @@ module.exports = {
      * ref：https://v1.vuepress.vuejs.org/config/#head
      */
     head: [
-        ['meta', { name: 'theme-color', content: '#3eaf7c' }],
-        ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-        ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
+        ['meta', {
+            name: 'theme-color',
+            content: '#3eaf7c'
+        }],
+        ['meta', {
+            name: 'apple-mobile-web-app-capable',
+            content: 'yes'
+        }],
+        ['meta', {
+            name: 'apple-mobile-web-app-status-bar-style',
+            content: 'black'
+        }]
     ],
 
     /**
@@ -33,15 +40,48 @@ module.exports = {
         docsDir: '',
         editLinkText: '',
         lastUpdated: false,
-        nav: [
+        nav: [{
+                text: '博文',
+                items: [
+                    {
+                        text: 'webpack',
+                        link: '/blog/webpack/introduction' 
+                    },
+                    {
+                        text: 'flutter',
+                        link: '/blog/flutter/init' 
+                    },
+                    {
+                        text: 'spider',
+                        link: '/blog/spider/introduction' 
+                    },
+                    {
+                        text: 'https',
+                        link: '/blog/https/introduction' 
+                    },
+                    {
+                        text: 'tensorflow',
+                        link: '/blog/tensorflow/introduction' 
+                    },
+                ],
+            },
+            {
+                text: '读书笔记',
+                items: [
+                    {
+                        text: 'JavaScript函数式编程指南',
+                        link: '/book/functional/first'
+                    }
+                ]
+                
+            }
         ],
         sidebarDepth: 1,
         sidebar: {
-            collapsable: false,
             '/blog/': [
                 {
                     title: 'webpack 5.x',
-                    collapsable: false,
+                    collapsable: true,
                     children: [
                         '/blog/webpack/introduction',
                         '/blog/webpack/loaders',
@@ -59,7 +99,7 @@ module.exports = {
                 },
                 {
                     title: 'flutter',
-                    collapsable: false,
+                    collapsable: true,
                     children: [
                         '/blog/flutter/init',
                         '/blog/flutter/package',
@@ -76,26 +116,35 @@ module.exports = {
                 },
                 {
                     title: 'spider',
-                    collapsable: false,
+                    collapsable: true,
                     children: [
                         '/blog/spider/init',
                     ]
                 },
                 {
                     title: 'http3',
-                    collapsable: false,
+                    collapsable: true,
                     children: [
                         '/blog/http/introduction',
                     ]
                 },
                 {
                     title: 'tensorflow',
-                    collapsable: false,
+                    collapsable: true,
                     children: [
                         '/blog/tensorflow/init',
                     ]
                 },
             ],
+            '/book/': [
+                {
+                    title: 'Javascript函数式编程指南',
+                    collapsable: false,
+                    children: [
+                        '/book/functional/first',
+                    ]
+                },
+            ]
         }
     },
 
