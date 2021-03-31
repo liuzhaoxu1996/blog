@@ -1,0 +1,20 @@
+# 如何编写测试程序
+
+## 1. 编写测试程序
+
+1. 源码文件以_test结尾: xxx_test.go
+2. 测试方法名以 Test 开头, `func TestXXX(t *testing.T) {...}`
+
+示例: 
+
+```go
+package try_test
+
+import (
+	"testing"
+)
+
+func TestFirstTest(t *testing.T) {
+	t.Log("My first try")
+}
+```

@@ -52,6 +52,10 @@ module.exports = {
                         link: '/blog/flutter/init' 
                     },
                     {
+                        text: 'go',
+                        link: '/blog/go/lesson1' 
+                    },
+                    {
                         text: 'spider',
                         link: '/blog/spider/introduction' 
                     },
@@ -112,6 +116,16 @@ module.exports = {
                         '/blog/flutter/usage',
                         '/blog/flutter/components',
                         '/blog/flutter/example',
+                    ]
+                },
+                {
+                    title: 'go',
+                    collapsable: true,
+                    children: [
+                        '/blog/go/lesson1.md',
+                        '/blog/go/lesson2.md',
+                        '/blog/go/lesson3.md',
+                        '/blog/go/lesson4.md',
                     ]
                 },
                 {
