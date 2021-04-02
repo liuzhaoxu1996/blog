@@ -126,6 +126,11 @@ module.exports = {
                         '/blog/go/lesson2.md',
                         '/blog/go/lesson3.md',
                         '/blog/go/lesson4.md',
+                        '/blog/go/lesson5.md',
+                        '/blog/go/lesson6.md',
+                        '/blog/go/lesson7.md',
+                        '/blog/go/lesson8.md',
+                        '/blog/go/lesson9.md',
                     ]
                 },
                 {
