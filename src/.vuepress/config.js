@@ -75,6 +75,10 @@ module.exports = {
                     {
                         text: 'JavaScript函数式编程指南',
                         link: '/book/functional/first'
+                    },
+                    {
+                        text: 'JavaScript高级程序设计',
+                        link: '/book/professional/1'
                     }
                 ]
                 
@@ -155,12 +159,31 @@ module.exports = {
                     ]
                 },
             ],
-            '/book/': [
+            '/book/functional/': [
                 {
                     title: 'Javascript函数式编程指南',
                     collapsable: false,
                     children: [
                         '/book/functional/first',
+                    ]
+                },
+            ],
+            '/book/professional/': [
+                {
+                    title: 'Javascript高级程序设计',
+                    collapsable: false,
+                    children: [
+                        '/book/professional/1.md',
+                        '/book/professional/2.md',
+                        '/book/professional/3.md',
+                        '/book/professional/4.md',
+                        '/book/professional/5.md',
+                        '/book/professional/6.md',
+                        '/book/professional/7.md',
+                        '/book/professional/8.md',
+                        '/book/professional/9.md',
+                        '/book/professional/10.md',
+                        '/book/professional/11.md',
                     ]
                 },
             ]
