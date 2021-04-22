@@ -1,4 +1,4 @@
-# 零基础学SQL、MySQL以及Workbench笔记
+# MySQL笔记
 
 ## SHOW语句
 
@@ -282,7 +282,7 @@ DROP VIEW:删除视图。
 DROP VIEW List;
 ```
 
-## 附录: 
+## 附录
 
 Mysql支持的数据类型有哪些？
 
