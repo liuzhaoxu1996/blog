@@ -145,6 +145,13 @@ module.exports = {
                     ]
                 },
                 {
+                    title: 'mysql',
+                    collapsable: true,
+                    children: [
+                        '/blog/mysql/lesson1',
+                    ]
+                },
+                {
                     title: 'http3',
                     collapsable: true,
                     children: [
