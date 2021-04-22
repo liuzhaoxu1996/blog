@@ -108,7 +108,9 @@ SELECT FirstName, UPPER(LastName) AS LastName FROM employees;
 SELECT Salary, SQRT(Salary) FROM employees;
 ```
 
-## 子查询 (当一个查询是另一个查询的条件时，称之为子查询。)
+## 子查询 
+
+- 当一个查询是另一个查询的条件时，称之为子查询。
 
 ```sql
 
@@ -119,7 +121,9 @@ SELECT * FROM items WHERE cost>500 ORDER BY cost DESC;
 SELECT Salary FROM employees WHERE Salary > (SELECT AVG(Salary) FROM employees);
 ```
 
-## 表连接：组合来自两个或对个表的数据。表连接创建一个临时表，显示连接表中的数据。
+## 表连接：
+
+- 组合来自两个或对个表的数据。表连接创建一个临时表，显示连接表中的数据。
 
 ```sql
 -- 案例：连接 customers表和orders表
@@ -355,4 +359,4 @@ Drop database samp;
 -- 输入exit或quit退出登录。
 ```
 
-## [MySQL Workbench导入csv文件](https://zhuanlan.zhihu.com/p/27019458)
+- [MySQL Workbench导入csv文件](https://zhuanlan.zhihu.com/p/27019458)
