@@ -149,6 +149,7 @@ module.exports = {
                     collapsable: true,
                     children: [
                         '/blog/mysql/lesson1',
+                        '/blog/mysql/lesson2',
                     ]
                 },
                 {
