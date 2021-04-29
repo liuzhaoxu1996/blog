@@ -153,7 +153,7 @@ module.exports = {
                     ]
                 },
                 {
-                    title: 'http3',
+                    title: 'http',
                     collapsable: true,
                     children: [
                         '/blog/http/introduction',
