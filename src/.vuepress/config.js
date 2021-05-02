@@ -79,9 +79,18 @@ module.exports = {
                     {
                         text: 'JavaScript高级程序设计',
                         link: '/book/professional/1'
-                    }
+                    },
                 ]
                 
+            },
+            {
+                text: '视频笔记',
+                items: [
+                    {
+                        text: '极客时间: 算法训练营',
+                        link: '/video/algorithm/8'
+                    }
+                ]
             }
         ],
         sidebarDepth: 1,
@@ -194,7 +203,17 @@ module.exports = {
                         '/book/professional/11.md',
                     ]
                 },
-            ]
+            ],
+            '/video/algorithm/': [
+                {
+                    title: '极客时间: 算法训练营',
+                    collapsable: false,
+                    children: [
+                        '/video/algorithm/8',
+                        '/video/algorithm/9',
+                    ]
+                },
+            ],
         }
     },
 
