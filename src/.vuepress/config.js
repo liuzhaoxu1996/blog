@@ -209,6 +209,7 @@ module.exports = {
                     title: '极客时间: 算法训练营',
                     collapsable: false,
                     children: [
+                        '/video/algorithm/2',
                         '/video/algorithm/8',
                         '/video/algorithm/9',
                     ]
