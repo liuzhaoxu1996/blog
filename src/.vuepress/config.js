@@ -210,6 +210,8 @@ module.exports = {
                     collapsable: false,
                     children: [
                         '/video/algorithm/2',
+                        '/video/algorithm/3',
+                        '/video/algorithm/4',
                         '/video/algorithm/8',
                         '/video/algorithm/9',
                     ]
