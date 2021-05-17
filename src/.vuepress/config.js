@@ -89,6 +89,10 @@ module.exports = {
                     {
                         text: '极客时间: 算法训练营',
                         link: '/video/algorithm/8'
+                    },
+                    {
+                        text: '零基础学Java',
+                        link: '/video/java/1'
                     }
                 ]
             }
@@ -214,6 +218,20 @@ module.exports = {
                         '/video/algorithm/4',
                         '/video/algorithm/8',
                         '/video/algorithm/9',
+                    ]
+                },
+            ],
+            '/video/java/': [
+                {
+                    title: '极客时间：零基础学Java',
+                    collapsable: false,
+                    children: [
+                        '/video/java/1',
+                        '/video/java/2',
+                        '/video/java/3',
+                        '/video/java/15',
+                        '/video/java/16',
+                        '/video/java/17',
                     ]
                 },
             ],
