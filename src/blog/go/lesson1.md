@@ -1,6 +1,6 @@
-# Go
+# 简介
 
-## 1. 简介
+## 1. Go
 Go的诞生是2007年, 当时是为了解决Google内部所发现的一些问题及挑战:
 
 1. 多核硬件架构
@@ -27,28 +27,45 @@ Go的诞生是2007年, 当时是为了解决Google内部所发现的一些问题
 
 - [https://golang.org/doc/install](https://golang.org/doc/install);
 
-2. 开发环境构建:
+2. 创建学习文件夹:
 
-- 在1.8版本前必须设置这个环境变量
-- 1.8版本之后(含1.8) 如果没有设置使用默认值, 
-  - mac: `~/.bash_profile`
+```sh
+mkdir go-learning
 
-3. 应用程序入口: 
+cd go-learning
 
+touch helloword.go
+```
+
+3. 编写 helloword.go 文件
+
+```go
+// 基本程序结构
+package main // 包, 表名代码所在的模块
+
+import "fmt" // 引入代码依赖
+
+// 功能实现
+func main() {
+  fmt.Println("HelloWorld")
+}
+```
+
+::: tip 说明
+应用程序入口: 
   - 必须是main包: package main;
+
   - 必须是main的方法: func main();
+
   - 文件名不一定是 main.go;
 
-4. 退出返回值
-
   - Go中main函数不支持任何返回值
+
   - 通过os.Exit来返回状态
 
-5. 获取命令行参数
+  - main函数不支持传入参数
 
-  - **main函数不支持传入参数**
   - 在程序中直接通过os.Args获取命令行参数
-
   ```go
   func main() {
     if len(os.Args)>1 {
@@ -59,3 +76,6 @@ Go的诞生是2007年, 当时是为了解决Google内部所发现的一些问题
   // 不支持mian函数传入参数
   // func main(arg []string)
   ```
+:::
+
+  

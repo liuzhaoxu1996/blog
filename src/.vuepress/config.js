@@ -241,6 +241,11 @@ module.exports = {
                         '/video/java/37',
                         '/video/java/38',
                         '/video/java/39',
+                        '/video/java/47',
+                        '/video/java/136',
+                        '/video/java/137',
+                        '/video/java/138',
+                        '/video/java/139',
                     ]
                 },
             ],
