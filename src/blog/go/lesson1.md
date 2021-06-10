@@ -78,4 +78,16 @@ func main() {
   ```
 :::
 
-  
+4. 执行文件
+
+
+```sh
+# 第一种
+go run helloworld.go
+
+
+# 第二种
+go build helloworld.go 
+
+./helloworld.go
+```

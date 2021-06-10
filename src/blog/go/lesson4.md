@@ -2,24 +2,86 @@
 
 ## 一. 变量赋值
 
+1. 默认值
+
+- int 变量默认为`0`
+- string 变量默认为`""`
 ```go
-// 第一种
-var a int = 1
-var b int = 2
+package main
 
-// 第二种
-var a int 
-a = 1
+import "fmt"
 
-// 第三种
-a := 1
+func variableZeroValue() {
+	var a int
+	var s string
+	// Println 只能跟名字
+	fmt.Println(a, s)
+	// Printf 可以跟格式
+	fmt.Printf("%d %q\n", a, s) // 0, ""
+}
 
-// 第四种 类型推断
-var a = 1
+func main() {
+	variableZeroValue()
+}
+```
 
+2. 变量赋值
 
-// 第五种 交换ab值
-a,b = b,a
+```go
+package main
+
+import "fmt"
+
+func variableInitialValue() {
+	var a, b int = 3, 4
+	var s string = "abc"
+	fmt.Println(a, b, s)
+}
+
+func main() {
+	variableInitialValue()
+}
+```
+
+3. 简略写法
+
+```go
+package main
+
+import "fmt"
+
+// 外部声明必须使用 var
+var aa = 1
+var (
+	bb = "bb"
+	cc = "cc"
+)
+
+func variableShortValue() {
+	// 只能在 func 里面使用 := , 在函数外面必须使用 var 声明
+	a, b int := 3, 4
+	b = 5;
+	fmt.Println(a, b)
+}
+
+func main() {
+	variableShortValue()
+}
+```
+4. 枚举类型
+
+```go
+package main
+
+import "fmt"
+
+func consts() {
+	
+}
+
+func main() {
+	consts()
+}
 ```
 
 ## 二. 基本数据类型
@@ -27,11 +89,11 @@ a,b = b,a
 1. `bool`
 2. `string`
 3. `int` `int8` `int16` `int32` `int64`
-4. `uint` `uint8` `uint32` `uint64` `uintptr`
-5. `byte // alias for uint8`
-6. `rune // alias for int32, represents a Unicode code point`
+4. `uint` `uint8` `uint32` `uint64` `uintptr（指针)` （无符号）
+5. `byte`
+6. `rune 字符型长度32的`
 7. `float32` `float64`
-8. `complex64` `complex128`
+8. `complex64` `complex128` （复数）
 
 ## 三. 类型转化
 
