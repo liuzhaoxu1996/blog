@@ -26,7 +26,7 @@ func TestFn(t *testing.T) {
 ```
 
 
-## 二. 可变长参数
+## 二. 可变参数
 
 ```go
 package fn_test 
@@ -61,4 +61,48 @@ func TestDefer(t *testing.T) {
 }
 ```
 
+## 四. 指针
+
+对比 c++，go 指针简单之处在于不能运算
+
+示例： 表示修改 a 的指针
+
+```go
+var a int = 2
+var pa *int = &a
+*pa = 3
+fmt.Println(a)
+```
+
+## 五. 参数传递
+
+- go语言只能使用值传递
+- c++语言既有值传递又有引用传递
+
+示例：c++ demo
+
+```cpp
+void pass_by_val(int a) {
+	a++;
+}
+
+void pass_by_ref(int &a) {
+	a++;
+}
+
+int main() {
+	int a = 3;
+	
+	pass_by_val(a);
+	printf("After pass_by_val: %d\n", a);
+
+	pass_by_ref(a);
+	printf("After pass_by_ref: %d\n", a);
+}
+
+// 结果：
+// After pass_by_val: 3
+// After pass_by_ref: 4
+```
+原因：pass_by_val属于值传递，pass_by_ref属于引用传递。值传递相当于 copy 一份
 

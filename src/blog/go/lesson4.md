@@ -75,12 +75,21 @@ package main
 
 import "fmt"
 
-func consts() {
-	
+func enums() {
+	// iota 表示自增, 从1开始自增
+	// 下划线表示跳过
+	const (
+		cpp = iota
+		_
+		java
+		python
+		golang
+	)
+	fmt.Println(cpp, java, python, golang)
 }
 
 func main() {
-	consts()
+	enums()
 }
 ```
 
@@ -95,6 +104,9 @@ func main() {
 7. `float32` `float64`
 8. `complex64` `complex128` （复数）
 
+::: tip 提示
+没有 char 类型，只有 rune
+:::
 ## 三. 类型转化
 
 1. Go语言不允许隐式类型转换
@@ -179,16 +191,48 @@ func TestPoint(t *testing.T) {
 
 ```go
 // 循环
+// for 初始值; 终止条件; 递归条件
 for i := 0; i <= 9; i++ {
 	...
 }
+```
 
-// 无限循环
+2. 无限循环
+```go
 // 没有 while(true) {} 关键字
 for {
 	...
 }
 ```
+
+示例：进制转换
+
+```go
+package main
+
+import (
+	"strconv"
+	"fmt"
+)
+
+func convertToBin(n int) string {
+	result := ""
+	for ; n > 0; n /= 2 {
+		lsb := n % 2
+		// strconv.Iota: 转成字符串
+		result = strconv.Itoa(lsb) + result
+	}
+	return result
+}
+
+func main() {
+	fmt.Println(
+		convertToBin(5),
+		convertToBin(10),
+	)
+}
+```
+
 
 ## 十. 判断
 
@@ -200,14 +244,26 @@ for {
 if var declaration; condition {
 	// code...
 }
+```
 
+例如：读取 abc.txt 文件，如果失败则打印失败信息。如果成功打印内容
+
+```go
 // 业务场景
 // 通过执行某个函数对变量赋值, 如果出错走到else
-func TestIfMultiSec(t *testing.T) {
-	if v,err := someFun(); err == nil {
-		t.Log("1==1")
+package main
+
+import (
+	"fmt"
+	"io/ioutil"
+)
+
+func main() {
+	const filename = "abc.txt"
+	if contents, err := ioutil.ReadFile(filename); err != nil {
+		fmt.Println(err)
 	} else {
-		t.Log("err")
+		fmt.Printf("%s\n", contents)
 	}
 }
 ```
@@ -251,19 +307,26 @@ var arr [3]int
 
 // 或者
 arr := [3]int{1, 2, 3, 4}
+
 // 也可以不显示的声明个数
 arr := [...]int{1, 3, 4, 5}
+
+// 多维数组
+var grid [4][5]int
 ```
 
 2. 数组的遍历
 
-(1) 常规for
+- (1) 常规for
+
 ```go
 for i:=0; i<len(arr3); i++ {
 
 }
 ```
-(2) range
+
+- (2) range
+
 ```go
 for idx, v := range arr {
 	...
