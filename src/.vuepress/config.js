@@ -101,6 +101,24 @@ module.exports = {
         sidebar: {
             '/blog/': [
                 {
+                    title: 'webRTC',
+                    collapsable: false,
+                    children: [
+                        '/blog/webRTC/1',
+                        '/blog/webRTC/2',
+                        '/blog/webRTC/3',
+                    ]
+                },
+                {
+                    title: 'tensorflow',
+                    collapsable: false,
+                    children: [
+                        '/blog/tensorflow/1',
+                        '/blog/tensorflow/2',
+                        '/blog/tensorflow/3',
+                    ]
+                },
+                {
                     title: 'webpack 5.x',
                     collapsable: true,
                     children: [
@@ -173,15 +191,6 @@ module.exports = {
                     collapsable: true,
                     children: [
                         '/blog/http/introduction',
-                    ]
-                },
-                {
-                    title: 'tensorflow',
-                    collapsable: true,
-                    children: [
-                        '/blog/tensorflow/1',
-                        '/blog/tensorflow/2',
-                        '/blog/tensorflow/3',
                     ]
                 },
             ],
