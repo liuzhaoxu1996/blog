@@ -52,30 +52,34 @@ module.exports = {
     nav: [
       {
         text: "博文",
+        link: "/blog/1"
+      },
+      {
+        text: "归档",
         items: [
           {
-            text: "webpack",
-            link: "/blog/webpack/introduction"
+            text: "go",
+            link: "/document/go/1"
+          },
+          {
+            text: "java",
+            link: "/document/java/1"
           },
           {
             text: "flutter",
-            link: "/blog/flutter/init"
+            link: "/document/flutter/init"
           },
           {
-            text: "go",
-            link: "/blog/go/lesson1"
-          },
-          {
-            text: "spider",
-            link: "/blog/spider/introduction"
-          },
-          {
-            text: "https",
-            link: "/blog/https/introduction"
+            text: "webpack5",
+            link: "/document/webpack/introduction"
           },
           {
             text: "tensorflow",
-            link: "/blog/tensorflow/introduction"
+            link: "/document/tensorflow/1"
+          },
+          {
+            text: "mysql",
+            link: "/document/mysql/1"
           }
         ]
       },
@@ -93,105 +97,17 @@ module.exports = {
         ]
       },
       {
-        text: "视频笔记",
-        items: [
-          {
-            text: "极客时间: 算法训练营",
-            link: "/video/algorithm/8"
-          },
-          {
-            text: "零基础学Java",
-            link: "/video/java/1"
-          }
-        ]
+        text: "算法",
+        link: "/algorithm/2"
       }
     ],
     sidebarDepth: 1,
     sidebar: {
       "/blog/": [
         {
-          title: "webRTC",
+          title: "博文",
           collapsable: false,
-          children: ["/blog/webRTC/1", "/blog/webRTC/2", "/blog/webRTC/3"]
-        },
-        {
-          title: "tensorflow",
-          collapsable: false,
-          children: [
-            "/blog/tensorflow/1",
-            "/blog/tensorflow/2",
-            "/blog/tensorflow/3"
-          ]
-        },
-        {
-          title: "webpack 5.x",
-          collapsable: true,
-          children: [
-            "/blog/webpack/introduction",
-            "/blog/webpack/loaders",
-            "/blog/webpack/plugins",
-            "/blog/webpack/mode",
-            "/blog/webpack/watch",
-            "/blog/webpack/optimize",
-            "/blog/webpack/speed",
-            "/blog/webpack/webpackLibrary",
-            "/blog/webpack/upgrade",
-            "/blog/webpack/delete",
-            "/blog/webpack/federation",
-            "/blog/webpack/commonConfig"
-          ]
-        },
-        {
-          title: "flutter",
-          collapsable: true,
-          children: [
-            "/blog/flutter/init",
-            "/blog/flutter/package",
-            "/blog/flutter/layout",
-            "/blog/flutter/route",
-            "/blog/flutter/app",
-            "/blog/flutter/lifecycle",
-            "/blog/flutter/widget",
-            "/blog/flutter/dart",
-            "/blog/flutter/usage",
-            "/blog/flutter/components",
-            "/blog/flutter/example"
-          ]
-        },
-        {
-          title: "go",
-          collapsable: true,
-          children: [
-            "/blog/go/1",
-            "/blog/go/2",
-            "/blog/go/3",
-            "/blog/go/4",
-            "/blog/go/5",
-            "/blog/go/6",
-            "/blog/go/7",
-            "/blog/go/8",
-            "/blog/go/9",
-            "/blog/go/10",
-            "/blog/go/11",
-            "/blog/go/12",
-            "/blog/go/13",
-            "/blog/go/14"
-          ]
-        },
-        {
-          title: "spider",
-          collapsable: true,
-          children: ["/blog/spider/init"]
-        },
-        {
-          title: "mysql",
-          collapsable: true,
-          children: ["/blog/mysql/lesson1", "/blog/mysql/lesson2"]
-        },
-        {
-          title: "http",
-          collapsable: true,
-          children: ["/blog/http/introduction"]
+          children: ["/blog/1"]
         }
       ],
       "/book/functional/": [
@@ -220,45 +136,123 @@ module.exports = {
           ]
         }
       ],
-      "/video/algorithm/": [
+      "/algorithm/": [
         {
-          title: "极客时间: 算法训练营",
+          title: "算法",
           collapsable: false,
           children: [
-            "/video/algorithm/2",
-            "/video/algorithm/3",
-            "/video/algorithm/4",
-            "/video/algorithm/8",
-            "/video/algorithm/9"
+            "/algorithm/2",
+            "/algorithm/3",
+            "/algorithm/4",
+            "/algorithm/8",
+            "/algorithm/9"
           ]
         }
       ],
-      "/video/java/": [
+      "/document/java/": [
         {
           title: "极客时间：零基础学Java",
           collapsable: false,
           children: [
-            "/video/java/1",
-            "/video/java/2",
-            "/video/java/3",
-            "/video/java/15",
-            "/video/java/16",
-            "/video/java/17",
-            "/video/java/22",
-            "/video/java/27",
-            "/video/java/32",
-            "/video/java/33",
-            "/video/java/35",
-            "/video/java/36",
-            "/video/java/37",
-            "/video/java/38",
-            "/video/java/39",
-            "/video/java/47",
-            "/video/java/136",
-            "/video/java/137",
-            "/video/java/138",
-            "/video/java/139"
+            "/document/java/1",
+            "/document/java/2",
+            "/document/java/3",
+            "/document/java/15",
+            "/document/java/16",
+            "/document/java/17",
+            "/document/java/22",
+            "/document/java/27",
+            "/document/java/32",
+            "/document/java/33",
+            "/document/java/35",
+            "/document/java/36",
+            "/document/java/37",
+            "/document/java/38",
+            "/document/java/39",
+            "/document/java/47",
+            "/document/java/136",
+            "/document/java/137",
+            "/document/java/138",
+            "/document/java/139"
           ]
+        }
+      ],
+      "/document/go/": [
+        {
+          title: "go",
+          collapsable: false,
+          children: [
+            "/document/go/1",
+            "/document/go/2",
+            "/document/go/3",
+            "/document/go/4",
+            "/document/go/5",
+            "/document/go/6",
+            "/document/go/7",
+            "/document/go/8",
+            "/document/go/9",
+            "/document/go/10",
+            "/document/go/11",
+            "/document/go/12",
+            "/document/go/13"
+          ]
+        }
+      ],
+      "/document/flutter/": [
+        {
+          title: "flutter",
+          collapsable: false,
+          children: [
+            "/document/flutter/init",
+            "/document/flutter/package",
+            "/document/flutter/layout",
+            "/document/flutter/route",
+            "/document/flutter/app",
+            "/document/flutter/lifecycle",
+            "/document/flutter/widget",
+            "/document/flutter/dart",
+            "/document/flutter/usage",
+            "/document/flutter/components",
+            "/document/flutter/example"
+          ]
+        }
+      ],
+      "/document/webpack/": [
+        {
+          title: "webpack 5.x",
+          collapsable: true,
+          children: [
+            "/document/webpack/introduction",
+            "/document/webpack/loaders",
+            "/document/webpack/plugins",
+            "/document/webpack/mode",
+            "/document/webpack/watch",
+            "/document/webpack/optimize",
+            "/document/webpack/speed",
+            "/document/webpack/webpackLibrary",
+            "/document/webpack/upgrade",
+            "/document/webpack/delete",
+            "/document/webpack/federation",
+            "/document/webpack/commonConfig"
+          ]
+        }
+      ],
+      "/document/tensorflow/": [
+        {
+          title: "tensorflow",
+          collapsable: false,
+          children: [
+            "/document/tensorflow/1",
+            "/document/tensorflow/2",
+            "/document/tensorflow/3"
+          ]
+        }
+      ],
+      "/document/mysql/": [
+        {
+          title: "mysql",
+          collapsable: false,
+          children: ["/document/mysql/1", "/document/mysql/2"]
         }
       ]
     }
