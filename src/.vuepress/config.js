@@ -7,7 +7,7 @@ module.exports = {
   /**
      * Ref：https://v1.vuepress.vuejs.org/config/#description
      */
-  description: "Liuzhaoxu's blog",
+  description: "Liu zhaoxu's blog",
 
   /**
      * Extra tags to be injected to the page HTML `<head>`
@@ -106,6 +106,7 @@ module.exports = {
       "/blog/": [
         {
           title: "博文",
+          sidebarDepth: 0,
           collapsable: false,
           children: ["/blog/1"]
         }
