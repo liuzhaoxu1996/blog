@@ -264,7 +264,12 @@ module.exports = {
         {
           title: "nodejs",
           collapsable: false,
-          children: ["/document/nodejs/1", "/document/nodejs/2"]
+          children: [
+            "/document/nodejs/1",
+            "/document/nodejs/2",
+            "/document/nodejs/3",
+            "/document/nodejs/4"
+          ]
         }
       ]
     }
