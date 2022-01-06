@@ -80,6 +80,10 @@ module.exports = {
           {
             text: "mysql",
             link: "/document/mysql/1"
+          },
+          {
+            text: "nodejs",
+            link: "/document/nodejs/1"
           }
         ]
       },
@@ -254,6 +258,13 @@ module.exports = {
           title: "mysql",
           collapsable: false,
           children: ["/document/mysql/1", "/document/mysql/2"]
+        }
+      ],
+      "/document/nodejs/": [
+        {
+          title: "nodejs",
+          collapsable: false,
+          children: ["/document/nodejs/1", "/document/nodejs/2"]
         }
       ]
     }
