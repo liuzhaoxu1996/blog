@@ -2,12 +2,12 @@ module.exports = {
   /**
      * Ref：https://v1.vuepress.vuejs.org/config/#title
      */
-  title: "Liu zhaoxu's blog",
+  title: "刘朝旭的博客",
 
   /**
      * Ref：https://v1.vuepress.vuejs.org/config/#description
      */
-  description: "Liu zhaoxu's blog",
+  description: "刘朝旭的博客",
 
   /**
      * Extra tags to be injected to the page HTML `<head>`
@@ -84,6 +84,10 @@ module.exports = {
           {
             text: "nodejs",
             link: "/document/nodejs/1"
+          },
+          {
+            text: "面试",
+            link: "/document/interview/1"
           }
         ]
       },
@@ -270,6 +274,13 @@ module.exports = {
             "/document/nodejs/3",
             "/document/nodejs/4"
           ]
+        }
+      ],
+      "/document/interview/": [
+        {
+          title: "面试",
+          collapsable: false,
+          children: ["/document/interview/1"]
         }
       ]
     }
