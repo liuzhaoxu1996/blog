@@ -280,7 +280,11 @@ module.exports = {
         {
           title: "面试",
           collapsable: false,
-          children: ["/document/interview/1"]
+          children: [
+            "/document/interview/1",
+            "/document/interview/2",
+            "/document/interview/3"
+          ]
         }
       ]
     }
