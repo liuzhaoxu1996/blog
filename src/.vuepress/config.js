@@ -1,48 +1,48 @@
 module.exports = {
   /**
-     * Ref：https://v1.vuepress.vuejs.org/config/#title
-     */
-  title: "刘朝旭的博客",
+   * Ref：https://v1.vuepress.vuejs.org/config/#title
+   */
+  title: "Zhaoxu Liu",
 
   /**
-     * Ref：https://v1.vuepress.vuejs.org/config/#description
-     */
-  description: "刘朝旭的博客",
+   * Ref：https://v1.vuepress.vuejs.org/config/#description
+   */
+  description: "Zhaoxu Liu",
 
   /**
-     * Extra tags to be injected to the page HTML `<head>`
-     *
-     * ref：https://v1.vuepress.vuejs.org/config/#head
-     */
+   * Extra tags to be injected to the page HTML `<head>`
+   *
+   * ref：https://v1.vuepress.vuejs.org/config/#head
+   */
   head: [
     [
       "meta",
       {
         name: "theme-color",
-        content: "#3eaf7c"
-      }
+        content: "#3eaf7c",
+      },
     ],
     [
       "meta",
       {
         name: "apple-mobile-web-app-capable",
-        content: "yes"
-      }
+        content: "yes",
+      },
     ],
     [
       "meta",
       {
         name: "apple-mobile-web-app-status-bar-style",
-        content: "black"
-      }
-    ]
+        content: "black",
+      },
+    ],
   ],
 
   /**
-     * Theme configuration, here is the default theme configuration for VuePress.
-     *
-     * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
-     */
+   * Theme configuration, here is the default theme configuration for VuePress.
+   *
+   * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
+   */
   themeConfig: {
     repo: "",
     editLinks: false,
@@ -52,62 +52,62 @@ module.exports = {
     nav: [
       {
         text: "博文",
-        link: "/blog/1"
+        link: "/blog/1",
       },
-      {
-        text: "归档",
-        items: [
-          {
-            text: "go",
-            link: "/document/go/1"
-          },
-          {
-            text: "java",
-            link: "/document/java/1"
-          },
-          {
-            text: "flutter",
-            link: "/document/flutter/init"
-          },
-          {
-            text: "webpack5",
-            link: "/document/webpack/introduction"
-          },
-          {
-            text: "tensorflow",
-            link: "/document/tensorflow/1"
-          },
-          {
-            text: "mysql",
-            link: "/document/mysql/1"
-          },
-          {
-            text: "nodejs",
-            link: "/document/nodejs/1"
-          },
-          {
-            text: "面试",
-            link: "/document/interview/javascript"
-          }
-        ]
-      },
-      {
-        text: "读书笔记",
-        items: [
-          {
-            text: "JavaScript函数式编程指南",
-            link: "/book/functional/first"
-          },
-          {
-            text: "JavaScript高级程序设计",
-            link: "/book/professional/1"
-          }
-        ]
-      },
-      {
-        text: "算法",
-        link: "/algorithm/2"
-      }
+    //   {
+    //     text: "归档",
+    //     items: [
+    //       {
+    //         text: "go",
+    //         link: "/document/go/1",
+    //       },
+    //       {
+    //         text: "java",
+    //         link: "/document/java/1",
+    //       },
+    //       {
+    //         text: "flutter",
+    //         link: "/document/flutter/init",
+    //       },
+    //       {
+    //         text: "webpack5",
+    //         link: "/document/webpack/introduction",
+    //       },
+    //       {
+    //         text: "tensorflow",
+    //         link: "/document/tensorflow/1",
+    //       },
+    //       {
+    //         text: "mysql",
+    //         link: "/document/mysql/1",
+    //       },
+    //       {
+    //         text: "nodejs",
+    //         link: "/document/nodejs/1",
+    //       },
+    //       {
+    //         text: "面试",
+    //         link: "/document/interview/javascript",
+    //       },
+    //     ],
+    //   },
+    //   {
+    //     text: "读书笔记",
+    //     items: [
+    //       {
+    //         text: "JavaScript函数式编程指南",
+    //         link: "/book/functional/first",
+    //       },
+    //       {
+    //         text: "JavaScript高级程序设计",
+    //         link: "/book/professional/1",
+    //       },
+    //     ],
+    //   },
+    //   {
+    //     text: "算法",
+    //     link: "/algorithm/2",
+    //   },
     ],
     sidebarDepth: 1,
     sidebar: {
@@ -116,15 +116,15 @@ module.exports = {
           title: "博文",
           sidebarDepth: 0,
           collapsable: false,
-          children: ["/blog/1", "/blog/2", "/blog/3"]
-        }
+          children: ["/blog/1"],
+        },
       ],
       "/book/functional/": [
         {
           title: "Javascript函数式编程指南",
           collapsable: false,
-          children: ["/book/functional/first"]
-        }
+          children: ["/book/functional/first"],
+        },
       ],
       "/book/professional/": [
         {
@@ -141,9 +141,9 @@ module.exports = {
             "/book/professional/8",
             "/book/professional/9",
             "/book/professional/10",
-            "/book/professional/11"
-          ]
-        }
+            "/book/professional/11",
+          ],
+        },
       ],
       "/algorithm/": [
         {
@@ -154,9 +154,9 @@ module.exports = {
             "/algorithm/3",
             "/algorithm/4",
             "/algorithm/8",
-            "/algorithm/9"
-          ]
-        }
+            "/algorithm/9",
+          ],
+        },
       ],
       "/document/java/": [
         {
@@ -182,9 +182,9 @@ module.exports = {
             "/document/java/136",
             "/document/java/137",
             "/document/java/138",
-            "/document/java/139"
-          ]
-        }
+            "/document/java/139",
+          ],
+        },
       ],
       "/document/go/": [
         {
@@ -203,9 +203,9 @@ module.exports = {
             "/document/go/10",
             "/document/go/11",
             "/document/go/12",
-            "/document/go/13"
-          ]
-        }
+            "/document/go/13",
+          ],
+        },
       ],
       "/document/flutter/": [
         {
@@ -222,9 +222,9 @@ module.exports = {
             "/document/flutter/dart",
             "/document/flutter/usage",
             "/document/flutter/components",
-            "/document/flutter/example"
-          ]
-        }
+            "/document/flutter/example",
+          ],
+        },
       ],
       "/document/webpack/": [
         {
@@ -242,9 +242,9 @@ module.exports = {
             "/document/webpack/upgrade",
             "/document/webpack/delete",
             "/document/webpack/federation",
-            "/document/webpack/commonConfig"
-          ]
-        }
+            "/document/webpack/commonConfig",
+          ],
+        },
       ],
       "/document/tensorflow/": [
         {
@@ -253,16 +253,16 @@ module.exports = {
           children: [
             "/document/tensorflow/1",
             "/document/tensorflow/2",
-            "/document/tensorflow/3"
-          ]
-        }
+            "/document/tensorflow/3",
+          ],
+        },
       ],
       "/document/mysql/": [
         {
           title: "mysql",
           collapsable: false,
-          children: ["/document/mysql/1", "/document/mysql/2"]
-        }
+          children: ["/document/mysql/1", "/document/mysql/2"],
+        },
       ],
       "/document/nodejs/": [
         {
@@ -272,9 +272,9 @@ module.exports = {
             "/document/nodejs/1",
             "/document/nodejs/2",
             "/document/nodejs/3",
-            "/document/nodejs/4"
-          ]
-        }
+            "/document/nodejs/4",
+          ],
+        },
       ],
       "/document/interview/": [
         {
@@ -292,15 +292,15 @@ module.exports = {
             "/document/interview/other",
             "/document/interview/coding",
             "/document/interview/coding2",
-            "/document/interview/interview"
-          ]
-        }
-      ]
-    }
+            "/document/interview/interview",
+          ],
+        },
+      ],
+    },
   },
 
   /**
-     * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
-     */
-  plugins: ["@vuepress/plugin-back-to-top", "@vuepress/plugin-medium-zoom"]
+   * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
+   */
+  plugins: ["@vuepress/plugin-back-to-top", "@vuepress/plugin-medium-zoom"],
 };
