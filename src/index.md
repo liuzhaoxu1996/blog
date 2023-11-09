@@ -11,5 +11,7 @@ features:
   - title: Nodejs
     details: 有过nextjs、nuxtjs、puppeteer等开发经验，专注nodejs服务端渲染性能。
   - title: Graphics
-    details: 喜欢图形学、原生canvas、目前正在学习G、G2等相关项目源码。
+    details: 喜欢图形学、原生canvas、目前正在学习G、G2等相关项目源码。 
+  - title: Web安全
+    details: 对web端内容版权、数据混淆等感兴趣。
 ---
