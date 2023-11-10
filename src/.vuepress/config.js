@@ -116,7 +116,7 @@ module.exports = {
           title: "博文",
           sidebarDepth: 0,
           collapsable: false,
-          children: ["/blog/1", "/blog/2"],
+          children: ["/blog/1", "/blog/2"].reverse(),
         },
       ],
       "/book/functional/": [
