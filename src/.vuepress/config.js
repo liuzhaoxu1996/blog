@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const blogList = fs.readdirSync(path.resolve(__dirname, '../blog')).map(item => {
 	return `/blog/${item.split('.')[0]}`
-})
+}).reverse();
 module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
