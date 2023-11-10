@@ -54,60 +54,60 @@ module.exports = {
         text: "博文",
         link: "/blog/1",
       },
-    //   {
-    //     text: "归档",
-    //     items: [
-    //       {
-    //         text: "go",
-    //         link: "/document/go/1",
-    //       },
-    //       {
-    //         text: "java",
-    //         link: "/document/java/1",
-    //       },
-    //       {
-    //         text: "flutter",
-    //         link: "/document/flutter/init",
-    //       },
-    //       {
-    //         text: "webpack5",
-    //         link: "/document/webpack/introduction",
-    //       },
-    //       {
-    //         text: "tensorflow",
-    //         link: "/document/tensorflow/1",
-    //       },
-    //       {
-    //         text: "mysql",
-    //         link: "/document/mysql/1",
-    //       },
-    //       {
-    //         text: "nodejs",
-    //         link: "/document/nodejs/1",
-    //       },
-    //       {
-    //         text: "面试",
-    //         link: "/document/interview/javascript",
-    //       },
-    //     ],
-    //   },
-    //   {
-    //     text: "读书笔记",
-    //     items: [
-    //       {
-    //         text: "JavaScript函数式编程指南",
-    //         link: "/book/functional/first",
-    //       },
-    //       {
-    //         text: "JavaScript高级程序设计",
-    //         link: "/book/professional/1",
-    //       },
-    //     ],
-    //   },
-    //   {
-    //     text: "算法",
-    //     link: "/algorithm/2",
-    //   },
+      //   {
+      //     text: "归档",
+      //     items: [
+      //       {
+      //         text: "go",
+      //         link: "/document/go/1",
+      //       },
+      //       {
+      //         text: "java",
+      //         link: "/document/java/1",
+      //       },
+      //       {
+      //         text: "flutter",
+      //         link: "/document/flutter/init",
+      //       },
+      //       {
+      //         text: "webpack5",
+      //         link: "/document/webpack/introduction",
+      //       },
+      //       {
+      //         text: "tensorflow",
+      //         link: "/document/tensorflow/1",
+      //       },
+      //       {
+      //         text: "mysql",
+      //         link: "/document/mysql/1",
+      //       },
+      //       {
+      //         text: "nodejs",
+      //         link: "/document/nodejs/1",
+      //       },
+      //       {
+      //         text: "面试",
+      //         link: "/document/interview/javascript",
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     text: "读书笔记",
+      //     items: [
+      //       {
+      //         text: "JavaScript函数式编程指南",
+      //         link: "/book/functional/first",
+      //       },
+      //       {
+      //         text: "JavaScript高级程序设计",
+      //         link: "/book/professional/1",
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     text: "算法",
+      //     link: "/algorithm/2",
+      //   },
     ],
     sidebarDepth: 1,
     sidebar: {
@@ -116,7 +116,7 @@ module.exports = {
           title: "博文",
           sidebarDepth: 0,
           collapsable: false,
-          children: ["/blog/1"],
+          children: ["/blog/1", "/blog/2"],
         },
       ],
       "/book/functional/": [
