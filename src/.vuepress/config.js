@@ -1,3 +1,8 @@
+const fs = require('fs');
+const path = require('path');
+const blogList = fs.readdirSync(path.resolve(__dirname, '../blog')).map(item => {
+	return `/blog/${item.split('.')[0]}`
+})
 module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
@@ -116,7 +121,7 @@ module.exports = {
           title: "博文",
           sidebarDepth: 0,
           collapsable: false,
-          children: ["/blog/1", "/blog/2"].reverse(),
+          children: blogList,
         },
       ],
       "/book/functional/": [
