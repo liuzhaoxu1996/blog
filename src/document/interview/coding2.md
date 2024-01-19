@@ -1,6 +1,14 @@
 # 算法题目汇总
 
-## 1. 合并二维有序数组成一维有序数组，归并排序的思路
+## 无重复字符的最长子串
+
+公司：头条
+
+分类：算法
+
+[答案&解析](https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/)
+
+## 合并二维有序数组成一维有序数组，归并排序的思路
 
 公司：头条
 
@@ -50,7 +58,87 @@ mergeSort(arr1);
 mergeSort(arr2);
 ```
 
-## 2. 多种方式实现斐波那契数列
+## 单向链表实现队列
+
+公司：头条
+分类：算法
+[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/214)
+
+## 按要求实现 rightView 函数
+
+```js
+function TreeNode(val){
+  this.val = val;
+  this.left = null;
+  this.right = null;
+}
+function rightView(root){
+  // 请你实现
+}
+// => [1,4,3]
+     1      => 1
+   2   4    => 4
+ 7   3      => 3
+```
+
+公司：头条
+
+分类：算法
+
+[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/140)
+
+## 给定一个二叉树，找出其最大深度。二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。说明: 叶子节点是指没有子节点的节点
+
+公司：头条
+
+分类：算法
+
+[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/626)
+
+## 给定一个整数数组 nums，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和
+
+公司：头条
+
+分类：算法
+
+[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/625)
+
+答案：
+
+```js
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+const maxSubArray = function(nums) {
+    var max = Number.MIN_SAFE_INTEGER;
+    for(var i = 0;i < nums.length; i++){
+        var sum = 0;
+        for(var j = i;j < nums.length; j++){
+            sum += nums[j];
+            if(sum > max){
+                max = sum;
+            }
+        }
+    }
+    return max;
+};
+
+
+// 解法2：动态规划
+var maxSubArray = function(nums) {
+    var max = Number.MIN_SAFE_INTEGER;
+    var prev = 0;
+    for(var i=0;i<nums.length;i++){
+        prev = Math.max(prev+nums[i],nums[i])
+        max = Math.max(max,prev);
+    }
+    return max;
+};
+```
+
+## 多种方式实现斐波那契数列
 
 公司：腾讯、CVTE、微软
 
@@ -97,7 +185,7 @@ function* fib(n) {
 }
 ```
 
-## 3. 字符串出现的不重复最长长度
+## 字符串出现的不重复最长长度
 
 公司：腾讯
 
@@ -105,7 +193,7 @@ function* fib(n) {
 
 [答案&解析](https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/)
 
-## 4. 有一堆整数，请把他们分成三份，确保每一份和尽量相等（11，42，23，4，5，6 4 5 6 11 23 42 56 78 90）
+## 有一堆整数，请把他们分成三份，确保每一份和尽量相等（11，42，23，4，5，6 4 5 6 11 23 42 56 78 90）
 
 公司：滴滴
 
@@ -129,12 +217,6 @@ function* fib(n) {
 分类：算法
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/240)
 
-## 单向链表实现队列
-
-公司：头条
-分类：算法
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/214)
-
 ## 将给定的数组从顶级分类递归查找子分类，最终构建一个树状数组
 
 ```js
@@ -153,27 +235,6 @@ function* fib(n) {
 公司：顺丰
 分类：算法
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/157)
-
-## 按要求实现 rightView 函数
-
-```js
-function TreeNode(val){
-  this.val = val;
-  this.left = null;
-  this.right = null;
-}
-function rightView(root){
-  // 请你实现
-}
-// => [1,4,3]
-     1      => 1
-   2   4    => 4
- 7   3      => 3
-```
-
-公司：头条
-分类：算法
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/140)
 
 ## 二叉树序列化反序列化
 
@@ -328,14 +389,6 @@ console.log(fn('{[]}'));      // true
 
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/365)
 
-## 介绍冒泡排序、选择排序，说说冒泡排序如何优化
-
-公司：有赞
-
-分类：算法
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/492)
-
 ## 如何判断链表是否有环
 
 公司：有赞
@@ -381,57 +434,6 @@ console.log(fn('{[]}'));      // true
 分类：算法
 
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/667)
-
-## 给定一个二叉树，找出其最大深度。二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。说明: 叶子节点是指没有子节点的节点
-
-公司：头条
-
-分类：算法
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/626)
-
-## 给定一个整数数组 nums，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和
-
-公司：头条
-
-分类：算法
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/625)
-
-答案：
-
-```js
-
-/**
- * @param {number[]} nums
- * @return {number}
- */
-const maxSubArray = function(nums) {
-    var max = Number.MIN_SAFE_INTEGER;
-    for(var i = 0;i < nums.length; i++){
-        var sum = 0;
-        for(var j = i;j < nums.length; j++){
-            sum += nums[j];
-            if(sum > max){
-                max = sum;
-            }
-        }
-    }
-    return max;
-};
-
-
-// 解法2：动态规划
-var maxSubArray = function(nums) {
-    var max = Number.MIN_SAFE_INTEGER;
-    var prev = 0;
-    for(var i=0;i<nums.length;i++){
-        prev = Math.max(prev+nums[i],nums[i])
-        max = Math.max(max,prev);
-    }
-    return max;
-};
-```
 
 ## 按要求实现代码
 
