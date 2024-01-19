@@ -1,27 +1,116 @@
 # 算法题目汇总
 
-## 合并二维有序数组成一维有序数组，归并排序的思路
+## 1. 合并二维有序数组成一维有序数组，归并排序的思路
 
 公司：头条
+
 分类：算法
+
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/8)
 
-## 多种方式实现斐波那契数列
+```js
+/**
+ * 解题思路：
+ * 双指针 从头到尾比较 两个数组的第一个值，根据值的大小依次插入到新的数组中
+ * 空间复杂度：O(m + n)
+ * 时间复杂度：O(m + n)
+ * @param {Array} arr1
+ * @param {Array} arr2
+ */
+
+function　merge(arr1, arr2){
+    var　result=[];
+    while(arr1.length>0 && arr2.length>0){
+        if(arr1[0]<arr2[0]){
+              /*shift()方法用于把数组的第一个元素从其中删除，并返回第一个元素的值。*/
+            result.push(arr1.shift());
+        }else{
+            result.push(arr2.shift());
+        }
+    }
+    return　result.concat(arr1).concat(arr2);
+}
+
+function mergeSort(arr){
+    let lengthArr = arr.length;
+    if(lengthArr === 0){
+     return [];
+    }
+    while(arr.length > 1){
+     let arrayItem1 = arr.shift();
+     let arrayItem2 = arr.shift();
+     let mergeArr = merge(arrayItem1, arrayItem2);
+     arr.push(mergeArr);
+    }
+    return arr[0];
+}
+let arr1 = [[1,2,3],[4,5,6],[7,8,9],[1,2,3],[4,5,6]];
+let arr2 = [[1,4,6],[7,8,10],[2,6,9],[3,7,13],[1,5,12]];
+mergeSort(arr1);
+mergeSort(arr2);
+```
+
+## 2. 多种方式实现斐波那契数列
 
 公司：腾讯、CVTE、微软
+
 分类：算法
+
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/9)
 
-## 字符串出现的不重复最长长度
+```js
+// 基本方法
+function fib(n) {
+  if(n < 0) throw new Error('输入的数字不能小于0');
+  if (n < 2) {
+    return n;
+  }
+  return fib(n - 1) + fib(n - 2);
+}
+
+// 数组方法
+function fib(n) {
+  if(n < 0) throw new Error('输入的数字不能小于0');
+  if (n < 2) {
+    return n;
+  }
+  let list = [];
+  list[0] = 0;
+  list[1] = 1;
+  for (let i = 1; i < n; i++) {
+    list[i + 1] = list[i] + list[i - 1];
+  }
+  return list[n];
+}
+
+// Generator
+function* fib(n) {
+  if(n < 0) throw new Error('输入的数字不能小于0');
+  let f0 = 1,
+    f1 = 1,
+    count = 0;
+  while (count < n) {
+    yield f0;
+    [f0, f1] = [f1, f0 + f1];
+    count++;
+  }
+}
+```
+
+## 3. 字符串出现的不重复最长长度
 
 公司：腾讯
-分类：算法
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/10)
 
-## 有一堆整数，请把他们分成三份，确保每一份和尽量相等（11，42，23，4，5，6 4 5 6 11 23 42 56 78 90）
+分类：算法
+
+[答案&解析](https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/)
+
+## 4. 有一堆整数，请把他们分成三份，确保每一份和尽量相等（11，42，23，4，5，6 4 5 6 11 23 42 56 78 90）
 
 公司：滴滴
+
 分类：算法
+
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/19)
 
 ## [实操题]输入一条 polyline，输出 polyline 的中点
@@ -162,11 +251,46 @@ function rightView(root){
 */
 ```
 
-公司：新东方
+公司：360、新东方
 
 分类：算法
 
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/327)
+
+答案：
+
+```js
+function fn(str) {
+  const stack = []
+  const leftMap = {
+    '(': ')',
+    '[': ']',
+    '{': '}'
+  }
+  const rightMap = {
+    ')': '(',
+    ']': '[',
+    '}': '{'
+  }
+  let cur
+  for (let i = 0; i < str.length; i++) {
+    cur = str[i]
+    if (leftMap[cur]) {
+      stack.push(cur)
+    } else if (rightMap[cur]) {
+      if (!stack.length) return false
+      if (stack.pop() !== rightMap[cur]) return false
+    }
+  }
+  return true
+}
+console.log(fn('()'));        // true
+console.log(fn('()[]'));      // true
+console.log(fn('()[]{}'));    // true
+console.log(fn('(]'));        // false
+console.log(fn('([)]'));      // false
+console.log(fn('{[]}'));      // true
+```
 
 ## 手动实现一个函数，给定一个数组[1,0,2,3,4,-1,-3]，输出任意两个值和为 0 的下标
 
@@ -175,14 +299,6 @@ function rightView(root){
 分类：算法
 
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/321)
-
-## 介绍排序算法和快排原理
-
-公司：寺库、百分点
-
-分类：算法
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/314)
 
 ## 一个人每次只能走一层楼梯或者两层楼梯，问走到第 80 层楼梯一共有多少种方法
 
@@ -260,37 +376,6 @@ function rightView(root){
 
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/739)
 
-## 递归公式的时间复杂度为？(单选题)
-
-```js
-A.O(n)
-B.O(logn)
-C.O(nlogn)
-D.O(n2)
-```
-
-公司：会小二
-
-分类：算法
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/693)
-
-## 用 JavaScript 实现一个标准的排序算法(快排、冒泡、选择排序)，对某个数字数组进行由低到高的排序
-
-公司：会小二
-
-分类：算法
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/686)
-
-## 找出“aaaabbcccdddd”字符串中出现最多的字母？
-
-公司：心娱
-
-分类：算法
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/675)
-
 ## 求 n 以内的所有素数，并说明时间复杂度
 
 分类：算法
@@ -313,25 +398,40 @@ D.O(n2)
 
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/625)
 
-## 算法考察：Next Permutation
+答案：
 
 ```js
-/* 
-  Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers.
-  If such arrangement is not possible, it must rearrange it as the lowest possible order (ie, sorted in ascending order).
-  The replacement must be in-place, do not allocate extra memory.
-  Here are some examples. Inputs are in the left-hand column and its corresponding outputs are in the right-hand column.
-  1,2,3 → 1,3,2
-  3,2,1 → 1,2,3
-  1,1,5 → 1,5,1
-*/
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+const maxSubArray = function(nums) {
+    var max = Number.MIN_SAFE_INTEGER;
+    for(var i = 0;i < nums.length; i++){
+        var sum = 0;
+        for(var j = i;j < nums.length; j++){
+            sum += nums[j];
+            if(sum > max){
+                max = sum;
+            }
+        }
+    }
+    return max;
+};
+
+
+// 解法2：动态规划
+var maxSubArray = function(nums) {
+    var max = Number.MIN_SAFE_INTEGER;
+    var prev = 0;
+    for(var i=0;i<nums.length;i++){
+        prev = Math.max(prev+nums[i],nums[i])
+        max = Math.max(max,prev);
+    }
+    return max;
+};
 ```
-
-公司：爱范儿
-
-分类：算法
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/845)
 
 ## 按要求实现代码
 
@@ -351,44 +451,20 @@ function sort(n) {
 
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/821)
 
-## 找出两个数组的交集元素
-
-公司：乘法云
-
-分类：算法
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/806)
-
-## 输入一个整数，输出该数二进制表示中 1 的个数
-
-公司：新东方
-
-分类：算法
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/798)
-
-## ⽤ js 实现随机选取 10–100 之间的 10 个且不重复的数字，存⼊⼀个数组，还要排序
-
-分类：算法
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/795)
-
-## 请用算法实现，从给定的无序、不重复的数组data中，取出n个数，使其相加和为sum。并给出算法的时间/空间复杂度。(不需要找到所有的解，找到一个解即可)
-
 ```js
-function getResult(data,n,sum){
-  // your code
+const sort = (arr, n) => {
+  const obj = []
+  for (const value of arr) {
+    obj.push(
+      {
+        value,
+        gap: Math.abs(value - n),
+      },
+    )
+  }
+  obj.sort((a, b) => a.gap - b.gap)
+  return obj.map(item => item.value)
 }
+
+console.log(sort([7, 28, -1, 0, 7, 33], 7))
 ```
-
-公司：头条
-
-分类：算法
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/902)
-
-## 给定⼀个⼤⼩为 n 的数组，找到其中的众数。众数是指在数组中出现次数⼤于 n/2 的元素
-
-分类：算法
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/789)

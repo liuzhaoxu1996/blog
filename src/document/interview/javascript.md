@@ -1484,14 +1484,6 @@ Promise.all = function (arr) {
 
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/230)
 
-## es5 实现 isInteger
-
-公司：头条
-
-分类：JavaScript
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/215)
-
 ## 写出输出结果
 
 ```js
@@ -1549,6 +1541,30 @@ new new Foo().getName(); // ？
 
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/211)
 
+```js
+// (1)拼接html字符串,然后一次性插入ul中
+const oUl = document.getElementById('root');
+const aLi = Array.from(oUl.getElementsByTagName('li'));
+let str = '';
+for (let index = aLi.length - 1; index >= 0; index--) {
+    str += `<li>${aLi[index].innerHTML}</li>`;
+}
+oUl.innerHTML = str;
+
+// (2)使用文档片段
+function reverseChildNodes(node = document) {
+    const frag = node.ownerDocument.createDocumentFragment();
+    while(node.lastChild) {
+        // 每次取出最后一个子节点也会将该节点从源节点中移除,并且更新lastChild
+        frag.appendChild(node.lastChild);
+    }
+    // 将文档碎片直接插入到node节点下
+    node.appendChild(frag);
+}
+const oUl = document.getElementById('root');
+reverseChildNodes(oUl);
+```
+
 ## 怎样判断一个对象是否是数组，如何处理类数组对象
 
 公司：快手
@@ -1556,6 +1572,15 @@ new new Foo().getName(); // ？
 分类：JavaScript
 
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/210)
+
+```js
+// 展开运算符和Array.from()都可以将类数组转换成数组，也可以用for遍历
+
+Array.isArray = Array.isArray || function (arg) {
+  return Object.prototype.toString.call(arg) === '[object Array]';
+};
+
+```
 
 ## 是否了解 glob，glob 是如何处理文件的，业界是否还有其它解决方案
 
@@ -1572,6 +1597,17 @@ new new Foo().getName(); // ？
 分类：JavaScript
 
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/204)
+
+```js
+const tmp = new Set()
+Array.prototype.slice.call(document.querySelectorAll("*")).forEach(v => {
+    const tagName = v.tagName.toLowerCase()
+    if (tagName[0] === 's' || tagName[0] === 'h') {
+        tmp.add(v.tagName)
+    }
+})
+console.log(tmp);
+```
 
 ## `1000*1000` 的画布，上面有飞机、子弹，如何划分区域能够更有效的做碰撞检测，类似划分区域大小与碰撞检测效率的算法，说一下大致的思路
 
@@ -2485,6 +2521,14 @@ console.log(add(two(one()))); //3
 
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/268)
 
+```js
+Function.prototype.bind = function(context){
+    context.fn = this;
+    eval('context.fn('+(arguments[1]||[]).toString()+')');
+    delete context.fn;
+}
+```
+
 ## 手写实现 sleep 函数
 
 公司：自如
@@ -2493,13 +2537,20 @@ console.log(add(two(one()))); //3
 
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/267)
 
-## 请写出原生 js 如何设置元素高度
-
-公司：自如
-
-分类：JavaScript
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/264)
+```js
+function sleep(fn, delay, ...args) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      try {
+        const result = typeof fn === 'function' && fn.apply(this, args);
+        resolve(result);
+      } catch (error) {
+        reject(error);
+      }
+    }, delay);
+  });
+}
+```
 
 ## 用原生 js 实现自定义事件
 
@@ -2509,11 +2560,27 @@ console.log(add(two(one()))); //3
 
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/258)
 
+```js
+// 创建
+const myEvent = new Event('event_name') // 不能携带参数
+const myEvent = new CustomEvent('event_name', params) // 可以携带参数
+
+// 监听
+target.addEventListener('event_name',fn)
+
+// 触发
+document.dispatchEvent(myEvent)
+```
+
 ## 如何识别出字符串中的回车并进行换行？
 
 分类：JavaScript、编程题
 
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/257)
+
+```js
+str = str.replace(/[\r\n]/g, "<br />")
+```
 
 ## 输入一个日期 返回几秒前、几小时前、几天前、几月前
 
@@ -4856,11 +4923,11 @@ person.method(fn, 1);
 
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/790)
 
-## 给定⼀个⼤⼩为 n 的数组，找到其中的众数。众数是指在数组中出现次数⼤于 n/2 的元素
+<!-- ## 给定⼀个⼤⼩为 n 的数组，找到其中的众数。众数是指在数组中出现次数⼤于 n/2 的元素
 
 分类：数据结构与算反
 
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/789)
+[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/789) -->
 
 ## 原生实现addClass,用多种方法
 
@@ -4961,13 +5028,35 @@ if(cat.say() === "I'm white cat" && cat instanceof Cat && cat instanceof Animal)
 
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/863)
 
+```js
+Animal.prototype.bind = function (context,...arg) {
+    const _this = this
+    return function F(...arg2) { 
+        // 判断是否用于构造函数
+        if (this instanceof F) {
+          return new _this(...args1, ...args2)
+        }
+       return _this.apply(context, arg.concat(arg2))
+    }
+}
+```
+
 ## 文件上传如何做断点续传
 
 公司：网易、洋葱学院
 
 分类：JavaScript
 
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/236)
+答案：
+
+主要思路如下
+
+客户端将大文件分片，给每个分片连续编号
+并发向服务器提交每个分片，客户端记录下成功上传的分片id，将连续的最大的id号作为断点续传和进度计算的标示，
+如总共10个分片，其中(1,2,3,4,7,8,10)这几个分片上传成功，客户端记录的就是4。进度就是40%
+若未上传成功之前关闭浏览器导致上传中断，那么下一次从客户端本地存储取出上一次的进度4，从第五个分片开始上传。
+注意点：1. 断点上传前浏览器需要判断文件是否修改过，可以利用文件的lastModified属性简单判断一下。
+2. 这个机制非常类似于tcp的分片和重组。tcp有超时重传的机制，我们这里也可以加入异常重传机制。
 
 ## 列举 3 种强制类型转换和 2 种隐式类型转换
 
@@ -4975,4 +5064,23 @@ if(cat.say() === "I'm white cat" && cat instanceof Cat && cat instanceof Animal)
 
 分类：JavaScript
 
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/812)
+答案：
+
+```js
+// 强制类型转换
+var a = parseInt("123")
+console.log(typeof a) // number
+var b = parseFloat("123")
+console.log(typeof b) // number
+var c = 123
+console.log(typeof c.toString())// string
+var d = Number("1234")
+console.log(typeof d)
+var e = Boolean('true')
+console.log(typeof e)
+
+// 隐式转换
+console.log(typeof (1 + '1')) // string
+console.log(typeof (true + '1')) // string
+console.log(typeof (1 + true)) // number
+```
