@@ -1,44 +1,42 @@
 # Html题目汇总
 
-## meta 元素都有什么
-
-公司：完美世界
-
-分类：Html
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/364)
-
 ## script 的 async 跟 defer 的区别？
 
 公司：虎扑
 
 分类：Html
 
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/401)
+答案&解析
 
-## 知道语义化吗？说说你理解的语义化，如果是你，平时会怎么做来保证语义化？说说你了解的 HTML5 语义化标签？
+| 特性            | `async`           | `defer`              |
+| ------------- | ----------------- | -------------------- |
+| **是否异步加载**    | ✅ 是               | ✅ 是                  |
+| **是否阻塞 HTML** | ❌ 不阻塞 HTML 解析     | ❌ 不阻塞 HTML 解析        |
+| **执行顺序**      | **谁先加载完谁先执行**（无序） | **按文中顺序执行**（有序）      |
+| **是否等待 DOM**  | ❌ 不等待             | ✅ 等待 DOM 解析完成才执行     |
+| **使用场景推荐**    | 第三方脚本（广告、埋点）      | 页面自有脚本，需 DOM 或其他脚本依赖 |
+
+## HTML5 语义化标签？
 
 公司：蘑菇街
 
 分类：Html
 
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/379)
-
-## a 标签默认事件禁掉之后做了什么才实现了跳转
-
-公司：滴滴
-
-分类：Html
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/519)
-
-## 网站 SEO 怎么处理
-
-公司：喜马拉雅
-
-分类：Html
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/439)
+| 标签名            | 含义                  |
+| -------------- | ------------------- |
+| `<header>`     | 页面或模块的头部区域          |
+| `<footer>`     | 页面或模块的底部区域          |
+| `<nav>`        | 导航链接区域              |
+| `<main>`       | 页面的主要内容区域           |
+| `<section>`    | 页面中的一个独立区域          |
+| `<article>`    | 一篇文章或可独立分发的内容       |
+| `<aside>`      | 侧边栏，补充说明信息          |
+| `<figure>`     | 图片、图表等附带说明内容的容器     |
+| `<figcaption>` | `figure` 中的说明文字     |
+| `<time>`       | 时间标记                |
+| `<mark>`       | 高亮文本                |
+| `<summary>`    | `<details>` 折叠区域的标题 |
+| `<details>`    | 可折叠的内容块             |
 
 ## html 标签 b 和 strong 的区别
 
@@ -46,26 +44,9 @@
 
 分类：Html
 
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/766)
+答案&解析
 
-## 说一下减少 dom 数量的办法？一次性给你大量的 dom 怎么优化？
-
-公司：58
-
-分类：Html
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/706)
-
-## Html5 有哪些新特性？如何处理 Html5 新标签的浏览器兼容问题？如何区分 Html 和 Html5?
-
-分类：Html
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/676)
-
-## 请说明 Html 布局元素的分类有哪些？并描述每种布局元素的应用场景
-
-公司：玄武科技
-
-分类：Html
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/843)
+| 标签         | 是否加粗 | 是否有语义 | 用途          |
+| ---------- | ---- | ----- | ----------- |
+| `<b>`      | ✅    | ❌     | 纯样式加粗，无强调意义 |
+| `<strong>` | ✅    | ✅     | 强调内容的重要性    |

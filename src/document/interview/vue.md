@@ -1,21 +1,5 @@
 # Vue题目汇总
 
-## 按要求完成题目
-
-```js
-/* 
-  a)在不使用vue、react的前提下写代码解决一下问题
-    一个List页面上，含有1000个条目的待办列表，现其中100项在同一时间达到了过期时间，需要在对应项的text-node里添加“已过期”文字。需要尽可能减少dom重绘次数以提升性能。
-  b)尝试使用vue或react解决上述问题
-*/
-```
-
-公司：爱范儿
-
-分类：JavaScript、Vue、React、编程题
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/848)
-
 ## 说一下对 React 和 Vue 的理解，它们的异同
 
 公司：网易、脉脉、快手
@@ -23,14 +7,6 @@
 分类：React、Vue
 
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/347)
-
-## 对虚拟 DOM 的理解？虚拟 DOM 主要做了什么？虚拟 DOM 本身是什么？
-
-公司：有赞、微医、58
-
-分类：React、Vue
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/479)
 
 ## 介绍单页应用和多页应用？
 
@@ -56,21 +32,24 @@
 
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/307)
 
-## 简述 Vue 的基本原理
-
-公司：脉脉
-
-分类：Vue
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/290)
-
 ## 简述 Vue 的生命周期以及每个阶段做的事
 
 公司：脉脉、58
 
 分类：Vue
 
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/289)
+答案&解析
+
+| 钩子            | 常用操作示例            |
+| ------------- | ----------------- |
+| beforeCreate  | 初始化前的准备（很少用）      |
+| created       | 请求接口、初始化数据、事件监听   |
+| beforeMount   | 访问 DOM 前的准备       |
+| mounted       | DOM 相关操作（第三方库初始化） |
+| beforeUpdate  | 更新前对比旧状态、清理操作     |
+| updated       | 更新后执行依赖 DOM 变更的逻辑 |
+| beforeDestroy | 清除定时器、解绑事件、销毁资源   |
+| destroyed     | 完全销毁后的收尾工作        |
 
 ## 说一下 Vue 组件的通信方式都有哪些？(父子组件，兄弟组件，多级嵌套组件等等)
 
@@ -80,6 +59,14 @@
 
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/288)
 
+| 通信场景   | 方式                  | 适用情况        |
+| ------ | ------------------- | ----------- |
+| 父传子    | Props               | 简单单向数据传递    |
+| 子传父    | `$emit`             | 子组件通知父组件    |
+| 兄弟组件   | 父组件中转、事件总线、Vuex     | 兄弟间通信，状态共享  |
+| 多级嵌套组件 | Provide/Inject、Vuex | 祖孙传值、复杂状态共享 |
+| 全局状态管理 | Vuex                | 大型项目复杂状态管理  |
+
 ## 说一下 Vuex 的原理以及自己的理解
 
 公司：脉脉
@@ -88,146 +75,17 @@
 
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/287)
 
-## Vue v-model 是如何实现的，语法糖实际是什么
-
-公司：脉脉
-
-分类：Vue
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/286)
-
-## 说一下 Vue dom diff 算法
-
-公司：网易
-
-分类：Vue
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/281)
-
 ## 说一下 Vue 的\$nextTick 原理
 
 公司：自如
 
 分类：Vue
 
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/263)
+答案&解析
 
-## 说一下 vue-router 的原理
-
-公司：自如
-
-分类：Vue
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/262)
-
-## Vue 是如何收集依赖的
-
-公司：自如
-
-分类：Vue
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/259)
-
-## 说一下 Vue 单页与多页的区别
-
-分类：Vue
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/412)
-
-## 说一下 Vue 路由实现原理
-
-分类：Vue
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/411)
-
-## Vue3.0 为什么要用 proxy？是怎么用 proxy 实现数据监听的?
-
-公司：虎扑、CVTE
-
-分类：Vue
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/396)
-
-## 说一下对 vue3.0 的了解，vue3.0 为什么要用代理
-
-分类：Vue
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/577)
-
-## 子组件可以直接改变父组件的数据么，说明原因
-
-分类：Vue
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/576)
-
-## Vue 中一次性 200 条弹幕怎么处理
-
-公司：58
-
-分类：Vue
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/458)
-
-## vue hooks 有哪些
-
-分类：Vue
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/705)
-
-## 介绍 Vue template 到 render 的过程
-
-分类：Vue
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/704)
-
-## 怎么定义 vue-router 的动态路由？怎么获取传过来的动态参数？
-
-公司：会小二
-
-分类：Vue
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/690)
-
-## 下面关于 Vue 说法正确的是？(单选题)
-
-```js
-A.data 中某一属性的值发生改变后，视图会立即同步进行重新渲染
-B.Vue 实例创建后再添加的属性，该属性改动将不会触发视图更新
-C.计算属性只有在它的相关依赖发生改变时才会重新求值
-D.Vue 组件的 data 选项必须是函数
-```
-
-公司：会小二
-
-分类：Vue
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/684)
-
-## 为什么要用 Vuex 或者 Redux，不要说为了保存状态
-
-分类：Vue
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/663)
-
-## 为什么 Vue data 必须是函数
-
-分类：Vue
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/662)
-
-## Vue data 中某一个属性的值发生改变后，视图会立即同步执行重新渲染吗？
-
-分类：Vue
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/658)
-
-## 简述 mixin、extends 的覆盖逻辑
-
-公司：58
-
-分类：Vue
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/654)
+- Vue 会把需要更新的 DOM 操作推入一个异步队列（异步批处理）。
+- $nextTick 实质是基于异步任务机制（microtask 或 macrotask）注册一个回调，在 DOM 更新循环结束后执行。
+- Vue 优先使用 Promise.then（microtask），其次用 MutationObserver，再其次 setImmediate，最后 setTimeout。
 
 ## Vue 子组件和父组件执行顺序
 
@@ -235,13 +93,26 @@ D.Vue 组件的 data 选项必须是函数
 
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/653)
 
+```text
+父 beforeCreate → 父 created → 父 beforeMount
+      ↓
+    子 beforeCreate → 子 created → 子 beforeMount → 子 mounted
+      ↓
+父 mounted
+```
+
 ## Vuex 和 localStorage 的区别
 
 公司：高思教育
 
 分类：Vue
 
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/827)
+答案&解析
+
+| 名称               | 作用                                          |
+| ---------------- | ------------------------------------------- |
+| **Vuex**         | Vue.js 官方状态管理库，管理应用中的**全局状态**，用于组件间共享和同步状态。 |
+| **localStorage** | 浏览器本地存储，用于持久化存储数据，即使刷新或关闭浏览器数据依然存在。         |
 
 ## Vue 双向绑定原理
 
@@ -249,47 +120,17 @@ D.Vue 组件的 data 选项必须是函数
 
 分类：Vue
 
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/824)
+答案&解析
 
-## 说一下路由钩子在 Vue 生命周期的体现？
+Vue 双向绑定原理核心是 数据劫持 + 发布-订阅模式，
 
-公司：58
+数据劫持（Object.defineProperty）：通过 Object.defineProperty | proxy 拦截对象属性的访问和赋值操作，实现数据的响应式。
 
-分类：Vue
+发布-订阅模式：每个数据被劫持后，建立一个依赖收集器（Dep），当数据变化时通知所有订阅该数据的 watcher 进行更新。
 
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/820)
+Watcher：监听器，负责在数据变化时更新视图。
 
-## 计算属性和普通属性的区别
-
-公司：58
-
-分类：Vue
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/819)
-
-## 描述下自定义指令(你是怎么用自定义指令的)
-
-公司：58
-
-分类：Vue
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/818)
-
-## 说一下 Vue 中所有带\$的方法
-
-公司：58
-
-分类：Vue
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/817)
-
-## Vue-router 除了 router-link 怎么实现跳转
-
-公司：安居客
-
-分类：Vue
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/810)
+模板编译：Vue 编译模板时，会将模板中的变量解析成对应的响应式数据绑定。
 
 ## 说一下 Vue 的 keep-alive 是如何实现的，具体缓存的是什么？
 

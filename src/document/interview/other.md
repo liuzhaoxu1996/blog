@@ -197,14 +197,6 @@ D.安全性更高，客户端支持防御 XSRF
 
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/630)
 
-## 谈下淘宝和京东页面的实现
-
-公司：酷狗
-
-分类：其它
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/620)
-
 ## 如何监控 MySql、Redis 性能
 
 公司：酷狗
@@ -228,19 +220,3 @@ D.安全性更高，客户端支持防御 XSRF
 分类：其它、编程题
 
 [答案&解析](https://github.com/lgwebdream/FE-Interview/issues/801)
-
-## 谈一下微信小程序的架构以及为什么要用到双线程
-
-公司：快手
-
-分类：其它
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/205)
-
-## 小程序里面打开页面最多多少，生命周期、常用的 api 列举几个？
-
-公司：饿了么、安居客
-
-分类：其它
-
-[答案&解析](https://github.com/lgwebdream/FE-Interview/issues/811)
