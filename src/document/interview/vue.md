@@ -184,13 +184,13 @@ Watcher：监听器，负责在数据变化时更新视图。
 
 分类：Vue
 
-### 答案&解析
+答案&解析
 
 \<keep-alive\> 是 Vue 内置的一个抽象组件，专门用来缓存包裹的动态组件实例，避免重复创建和销毁，从而提升性能，尤其常用在路由视图（\<router-view\>）或动态组件切换中。
 
 它的核心目的就是 缓存组件实例及其 DOM，切换时不销毁，保持状态和 DOM 结构。
 
-### 实现原理
+实现原理
 
 \<keep-alive\> 内部维护一个 缓存池 cache，用一个对象存储已缓存的组件实例，key 通常是组件的 VNode.key。
 
@@ -200,7 +200,7 @@ Watcher：监听器，负责在数据变化时更新视图。
 
 否：创建新实例并缓存。
 
-### Vue3比Vue2性能提升
+## Vue3比Vue2性能提升
 
 回顾Vue2，我们知道每个组件实例都对应一个 watcher 实例，它会在组件渲染的过程中把用到的数据property记录为依赖，当依赖发生改变，触发setter，则会通知watcher，从而使关联的组件重新渲染。
 因此，Vue3在编译阶段，做了进一步优化：
@@ -219,7 +219,7 @@ Vue3中对不参与更新的元素，会做静态提升，只会被创建一次�
 ④ SSR优化
 当静态内容大到一定量级时候，会用createStaticVNode方法在客户端去生成一个static node，这些静态node，会被直接innerHtml，就不需要创建对象，然后根据对象渲染。
 
-### Vue3.0里为什么要用 Proxy API 替代 defineProperty API ？
+## Vue3.0里为什么要用 Proxy API 替代 defineProperty API ？
 
 1、vue2中采用 defineProperty来劫持整个对象，然后进行深度遍历所有属性，给每个属性添加getter和setter，实现响应式。但是存在以下的问题：
 
@@ -235,7 +235,7 @@ Proxy直接可以劫持整个对象，并返回一个新对象，我们可以只
 Proxy可以直接监听数组的变化（push、shift、splice）
 Proxy有多达13种拦截方法,不限于apply、ownKeys、deleteProperty、has等等，这是Object.defineProperty不具备的
 
-### Vue3.0响应式原理
+## Vue3.0响应式原理
 
 1、性能提升
 
@@ -267,7 +267,7 @@ Suspense 等待异步组件时渲染一些额外的内容，让应用有更好�
 6、Custom Renderer API： 自定义渲染器
 实现 DOM 的方式进行 WebGL 编程。
 
-### watch 和 watchEffect 的区别？
+## watch 和 watchEffect 的区别？
 
 watch 和 watchEffect 都是监听器，watchEffect 是一个副作用函数。它们之间的区别有：
 
@@ -287,6 +287,6 @@ watch与 vue2.x中 watch 配置功能一致，但也有两个小坑
 监视 reactive 定义的响应式数据时，oldValue 无法正确获取，强制开启了深度监视（deep配置失效）
 监视 reactive 定义的响应式数据中某个属性时，deep配置有效。
 
-### v-if 和 v-for 的优先级哪个高？
+## v-if 和 v-for 的优先级哪个高？
 
 在 vue2 中 v-for 的优先级更高，但是在 vue3 中优先级改变了。v-if 的优先级更高。
