@@ -12,8 +12,8 @@ cd ./src/.vuepress/dist
 # 如果是发布到自定义域名
 # echo 'www.example.com' > CNAME
 
-git init
-git add -A
+git init -b master
+git add -A 
 git commit -m 'update'
 
 # 如果发布到 https://<USERNAME>.github.io
